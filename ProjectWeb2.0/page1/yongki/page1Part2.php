@@ -21,8 +21,10 @@
                 </div>
             </div>
         </div>
+        
     </div>
-    <div class="col-bootstrap col-md-4" style="float:left;">
-        <img src="../assets/test1.jpg" alt="">
+
+    <div class="col-bootstrap col-md-4" style="float:left; margin-top:100px; margin-left:30px;">
+        <img src="../assets/test1.jpg" style="width:450px; "alt="">
     </div>
 </div>
