@@ -1,11 +1,13 @@
 <link rel="stylesheet" href="../../bootstrap4/css/bootstrap.min.css">
 <style>
-    *{
+    #fab-footer{
         line-height: 0.5;
     }
 </style>
 <!-- Footer -->
-<footer class="page-footer font-small unique-color-dark">
+<div style="clear:both"></div>
+<div>
+  <footer class="page-footer font-small unique-color-dark">
 
   <!-- Footer Links -->
   <div class="container text-center text-md-left mt-5">
@@ -133,5 +135,6 @@
   </div>
   <!-- Copyright -->
 
-</footer>
+  </footer>
+</div>
 <!-- Footer -->
