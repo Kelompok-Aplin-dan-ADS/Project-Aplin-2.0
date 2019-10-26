@@ -13,3 +13,14 @@
     position: relative;
     top:-120px;
 }
+
+.nav-cus{
+    position: relative;
+    float:right;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.word-space{
+    padding-left:50px;
+}
