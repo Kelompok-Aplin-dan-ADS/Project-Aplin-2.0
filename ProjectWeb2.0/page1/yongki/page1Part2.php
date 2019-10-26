@@ -7,7 +7,7 @@
         </h2>
         <span>#UPHIMPACTSLIVES</span> <br> <br>
 
-        <div class="card" style="max-width: 450px;">
+        <div class="card hoverCard" style="max-width: 450px;">
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <img src="../assets/test2.jpg" class="card-img-top h-100" alt="...">
@@ -21,10 +21,24 @@
                 </div>
             </div>
         </div>
-        
+        <br>
+        <div class="card hoverCard rounded card-gedung">
+            <div class="images-wrapper">
+                <div class="card-image "></div>
+            </div>
+            <div class="card-content" style="margin-top:300px; margin-left:25px;">
+                <h5 class="card-subtitle fontSubtitle">PEKAN KAMPUS 2019</h5>
+                <h4 class="card-title">SEE HOW WE WELCOME OUR FIRST YEAR STUDENTS</h4>
+            </div>
+        </div>
     </div>
 
     <div class="col-bootstrap col-md-4" style="float:left; margin-top:100px; margin-left:30px;">
-        <img src="../assets/test1.jpg" style="width:450px; "alt="">
+        <img src="../assets/test1.jpg" class="hoverCard" style="width:450px; "alt="">
+        <br> <br>
+        <div class="card">
+            ashdjahsdj
+        </div>
+
     </div>
 </div>
