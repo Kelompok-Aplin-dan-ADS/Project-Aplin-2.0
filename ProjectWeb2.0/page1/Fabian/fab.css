@@ -1,0 +1,15 @@
+.text-white{
+    color:white;
+}
+.tambah{
+    position: absolute;
+    margin-left:330px;
+    margin-top:50px;
+}
+.bg-stts{
+    background-color: brown;
+}
+.atas{
+    position: relative;
+    top:-120px;
+}

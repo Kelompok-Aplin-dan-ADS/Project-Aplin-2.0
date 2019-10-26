@@ -9,6 +9,8 @@
     
 </head>
 <body>
+	<?php include('fabian/navbar.php') ?>
+	<?php include('yongki/corusel.php') ?>
     <?php include('yongki/page1Part2.php') ?>
     <script src="../bootstrap4/js/bootstrap.min.js"></script>
 </body>
