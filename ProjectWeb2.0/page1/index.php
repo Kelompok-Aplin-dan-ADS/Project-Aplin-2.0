@@ -10,8 +10,10 @@
 </head>
 <body>
 	<?php include('fabian/navbar.php') ?>
-	<?php include('yongki/corusel.php') ?>
+	<?php include('fabian/corusel.php') ?>
     <?php include('yongki/page1Part2.php') ?>
+    <script src="../bootstrap4/js/js.js"></script>
+    <script src="../bootstrap4/js/proper.js"></script>
     <script src="../bootstrap4/js/bootstrap.min.js"></script>
 </body>
 </html>

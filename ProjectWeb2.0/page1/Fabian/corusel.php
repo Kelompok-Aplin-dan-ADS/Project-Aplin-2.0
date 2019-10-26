@@ -9,21 +9,21 @@
     </ol>
     <div class="carousel-inner" style="">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="Sekolah Tinggi Teknik Surabaya.jpg" alt="First slide">
+            <img class="d-block w-100" src="../assets/Sekolah Tinggi Teknik Surabaya.jpg" alt="First slide">
             <div class="carousel-caption d-none d-md-block" style="color:red">
                 <h5>lala</h5>
                 <p>lala</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="Sekolah Tinggi Teknik Surabaya.jpg" alt="Second slide">
+            <img class="d-block w-100" src="../assets/Sekolah Tinggi Teknik Surabaya.jpg" alt="Second slide">
             <div class="carousel-caption d-none d-md-block" style="color:red">
                 <h5>lala</h5>
                 <p>lala</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="Sekolah Tinggi Teknik Surabaya.jpg" alt="Third slide">
+            <img class="d-block w-100" src="../assets/Sekolah Tinggi Teknik Surabaya.jpg" alt="Third slide">
             <div class="carousel-caption d-none d-md-block" style="color:red">
                 <h5>lala</h5>
                 <p>lala</p>
@@ -40,6 +40,3 @@
     </a>
     </div>
 </div> 
-<script src="../../bootstrap4/js/js.js"></script>
-<script src="../../bootstrap4/js/proper.js"></script>
-<script src="../../bootstrap4/js/bootstrap.min.js"></script>

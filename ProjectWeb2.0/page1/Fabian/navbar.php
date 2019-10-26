@@ -1,9 +1,8 @@
-<link rel="stylesheet" href="../../bootstrap4/css/bootstrap.min.css">
-<link rel="stylesheet" href="fab.css">
+<link rel="stylesheet" href="fabian/fab.css">
 <div>
     <ul class="nav nav-pills bg-stts ">
         <li class="nav-item">
-           <img class="logo"src="logo.png" >
+           <img class="logo"src="../assets/logo.png" >
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">BAHASA</a>
@@ -27,6 +26,3 @@
         </li>
     </ul>
 </div> 
-<script src="../../bootstrap4/js/js.js"></script>
-<script src="../../bootstrap4/js/proper.js"></script>
-<script src="../../bootstrap4/js/bootstrap.min.js"></script>
