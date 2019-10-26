@@ -6,7 +6,7 @@
 </style>
 <!-- Footer -->
 <div style="clear:both"></div>
-<div>
+<div id="fab-footer">
   <footer class="page-footer font-small unique-color-dark">
 
   <!-- Footer Links -->
