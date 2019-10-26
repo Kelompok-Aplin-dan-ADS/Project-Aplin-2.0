@@ -1,0 +1,10 @@
+.whySTTS{
+    position: relative;
+    top: 100px;
+    height: 140px;
+    width: 0;
+    white-space: nowrap;
+    transform: translate(0px, 110px);
+    transform: rotate(-90deg);
+    float: left;
+}
