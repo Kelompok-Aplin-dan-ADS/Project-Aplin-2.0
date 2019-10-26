@@ -14,3 +14,24 @@
     padding-right: 1em;
     margin-bottom: -1.25em;
 }
+.hoverCard{
+    transition: 0.5s ease all;
+}
+.card-gedung{
+    background: url(http://localhost/ProjectWeb2.0/assets/gedung.jpg);
+    background-repeat: no-repeat;
+    height: 400px;
+}
+.fontSubtitle{
+    font-family: "Frank Ruhl Libre",serif;
+    color: #76adff;
+    margin-bottom: .8em;
+    font-weight: 300;
+}
+
+.hoverCard:hover{
+    -webkit-box-shadow: 10px 21px 29px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 21px 29px -1px rgba(0,0,0,0.75);
+    box-shadow: 10px 21px 29px -1px rgba(0,0,0,0.75);
+    transition: 0.5s ease all;
+}
