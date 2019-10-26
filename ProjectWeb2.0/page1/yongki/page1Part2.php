@@ -37,7 +37,9 @@
         <img src="../assets/test1.jpg" class="hoverCard" style="width:450px; "alt="">
         <br> <br>
         <div class="card">
-            ashdjahsdj
+            <div class="card-image">
+                <img src="../assets/card3.jpg" alt="">
+            </div>
         </div>
 
     </div>
