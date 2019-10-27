@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ISTTS</title>
-    <link rel="iconsheet" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_'G'_Logo.svg/1200px-Google_'G'_Logo.svg.png">
     <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
     
 </head>

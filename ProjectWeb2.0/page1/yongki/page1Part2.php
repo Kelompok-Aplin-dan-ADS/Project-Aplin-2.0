@@ -28,7 +28,7 @@
             </div>
             <div class="card-content" style="margin-top:300px; margin-left:25px;">
                 <h5 class="card-subtitle fontSubtitle">PEKAN KAMPUS 2019</h5>
-                <h4 class="card-title">SEE HOW WE WELCOME OUR FIRST YEAR STUDENTS</h4>
+                <h4 class="card-title text-white">SEE HOW WE WELCOME OUR FIRST YEAR STUDENTS</h4>
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@
         <br> <br>
         <div class="card">
             <div class="card-image">
-                <img src="../assets/card3.jpg" alt="">
+                <img src="../assets/gedung.jpg" alt="">
             </div>
         </div>
 
