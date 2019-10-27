@@ -18,9 +18,9 @@
     transition: 0.5s ease all;
 }
 .card-gedung{
-    background: url("../assets/gedung.jpg");
+    background: url(http://localhost/Project-Aplin-2.0/ProjectWeb2.0/assets/gedung.jpg);
     background-repeat: no-repeat;
-    height: 600px;
+    height: 400px;
 }
 .fontSubtitle{
     font-family: "Frank Ruhl Libre",serif;
