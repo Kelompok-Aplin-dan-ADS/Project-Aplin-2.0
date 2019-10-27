@@ -8,11 +8,11 @@
     transform: rotate(-90deg);
     float: left;
 }
-.card-img-left {
-    border-bottom-left-radius: calc(.25rem - 1px);
-    border-top-left-radius: calc(.25rem - 1px);
-    padding-right: 1em;
-    margin-bottom: -1.25em;
+.card-img-right{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
 }
 .hoverCard{
     transition: 0.5s ease all;
@@ -24,7 +24,7 @@
 }
 .fontSubtitle{
     font-family: "Frank Ruhl Libre",serif;
-    color: #76adff;
+    color:white;
     margin-bottom: .8em;
     font-weight: 300;
 }
