@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="Fabian/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="Fabian/css/font-awesome.min.css"/>
 <link rel="stylesheet" href="Fabian/css/flaticon.css"/>
 <link rel="stylesheet" href="Fabian/css/animate.css"/>
@@ -10,8 +9,9 @@
 </div>
 
 <!-- Header section start -->
+<img src="../assets/logo-stts.png" class="logo-stts-caur">
 <header class="header-section sp-pad">
-    <h3 class="site-logo">HALO</h3>
+    
     <form class="search-top">
         <button class="se-btn"><i class="fa fa-search"></i></button>
         <input type="text" placeholder="Search.....">

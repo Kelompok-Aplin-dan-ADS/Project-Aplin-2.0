@@ -7,7 +7,7 @@
     margin-top:50px;
 }
 .bg-stts{   
-    padding: 20px 20%;
+    padding: 20px 22%;
     background-color: white;
 }
 .logo-kiri{
@@ -42,4 +42,7 @@
     height:50px;
     z-index: 2;
     background-color:rgba(0, 0, 0, 0.5); ;
+}
+.logo-stts-caur{
+    padding-left:5%;width:13%;padding-top:1%;position:absolute;z-index:4;
 }

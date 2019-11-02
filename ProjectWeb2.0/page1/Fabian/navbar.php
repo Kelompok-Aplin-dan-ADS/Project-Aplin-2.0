@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="fabian/fab.css">
+<link rel="stylesheet" href="Fabian/fab.css">
     
-    <ul class="nav nav-pills navbar-light bg-stts" >
+    <ul class="bg-stts nav nav-pills navbar-light" >
         <li class="nav-item logo-kiri" >
             <img class="logo"src="../assets/logo.png" >
         </li>
