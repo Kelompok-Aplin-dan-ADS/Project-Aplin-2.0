@@ -1,8 +1,11 @@
 <link rel="stylesheet" href="../../bootstrap4/css/bootstrap.min.css">
 <link rel="stylesheet" href="fab.css">
 <!-- navbar tengah -->
+<div style="clear:both"></div>
+
+<div class="nav-cor"></div>
 <div style="z-index: 2;margin-left:800px;">
-    <nav class="navbar navbar-expand-lg" style="position:absolute;z-index: 2">
+    <nav class="navbar navbar-expand-lg navbar-cor-dlm ">
         <a class="navbar-brand nav-cus" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

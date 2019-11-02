@@ -10,7 +10,7 @@
 </head>
 <body>
 	<?php include('fabian/navbar.php') ?>
-	<?php include('fabian/corusel.php') ?>
+	<?php include('fabian/caurousel.php') ?>
     <?php include('yongki/page1Part2.php') ?>
     <?php include('Ming/calJur.php') ?>
 	<?php include('fabian/footer.php') ?>
