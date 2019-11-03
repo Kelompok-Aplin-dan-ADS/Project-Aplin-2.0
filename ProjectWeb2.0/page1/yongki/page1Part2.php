@@ -2,9 +2,9 @@
 <div class="container">
     <div class="col-bootstrap col-md-6" style="float:left;">
         <div class="whySTTS">WHY STTS</div>
-        <h1 class="section-title text-danger" style="margin-top:100px;">
+        <p class="section-title text-danger h1" style="margin-top:100px;">
             Pursue Your Passion & Purpose Here<span class="text-primary">.</span>
-        </h2>
+        </p>
         <span>#UPHIMPACTSLIVES</span> <br> <br>
 
         <div class="card hoverCard rounded" style="max-width: 450px;">
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="col-bootstrap col-md-5" style="float:left; margin-top:100px; margin-left:30px;">
+    <div class="col-bootstrap col-md-5" style="float:left; margin-top:100px;">
         <img src="../assets/test1.jpg" class="hoverCard" style="width:450px; height:300px; "alt="">
         <br> <br>
         <div class="card hoverCard" style="max-width: 450px;">
