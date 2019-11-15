@@ -46,3 +46,12 @@
 .logo-stts-caur{
     padding-left:5%;width:13%;padding-top:1%;position:absolute;z-index:4;
 }
+.hs-item .hs-title {
+    color:#fff;
+    font-size: 60px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    position: relative;
+    left: 150px;
+    opacity: 0;
+}

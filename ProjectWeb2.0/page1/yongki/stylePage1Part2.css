@@ -18,7 +18,6 @@
     transition: 0.5s ease all;
 }
 .card-gedung{
-    background: url("../../assets/gedung.jpg");
     background-repeat: no-repeat;
     height: 400px;
 }
