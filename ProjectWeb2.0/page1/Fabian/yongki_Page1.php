@@ -1,5 +1,5 @@
 <?php
-    include_once("..//connection.php");
+    include_once("connection.php");
     $semuaAcara=mysqli_query($conn,"SELECT * from acara");
     $jum=0;
     foreach ($semuaAcara as $key => $value) {
