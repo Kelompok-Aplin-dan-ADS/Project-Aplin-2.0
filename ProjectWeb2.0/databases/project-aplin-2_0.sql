@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2019 at 06:04 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.2.19
+-- Generation Time: Nov 16, 2019 at 10:29 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -57,6 +57,35 @@ INSERT INTO `acara` (`id_acara`, `gambar`, `judul`, `deskripsi`, `waktu`, `tempa
 (9, './../assets/events/seniFont.jpg', 'SENI MEMILIH FONT', 'Anda pasti pernah diminta untuk membuat sebuah slide presentasi, namun pernahkah anda mempertimbangkan jenis font apa yang digunakan? Pada kesempatan kali ini Knowledge Sharing Program (KSP) yang diadakan pada Senin, 21 Oktober silam bertempat di E401 tampak ramai membeludak oleh mahasiswa iSTTS. Seminar kali ini mengangkat tema \"Memilih Font untuk Presentasi\" dan dibawakan oleh Bu Amelia Agustina, S.Ds.\r\n \r\nPada seminar tersebut Bu Amel menekankan bahwa font berbeda dapat memberikan makna yang berbeda pula. Beliau memberikan contoh brand eksklusif seperti Channel akan terlihat biasa saja dan tidak memberi kesan mewah jika menggunakan font Comic Sans. Dalam pembuatan papan penunjuk jalan juga ada pertimbangan font yang dilakukan, yaitu font harus terlihat jelas dari jarak jauh untuk menginformasikan pengemudi.\r\n \r\nLantas mengapa diperlukan text slide dalam sebuah power point? Tulisan yang terlalu banyak dapat membuat audience menjadi bosan dan tidak focus dengan materi yang ingin disampaikan. “Is your font sexy enough? “, tanya Bu Amel. Beliau menjabarkan bahwa font terbagi menjadi dua, serif dan sans serif. Serif adalah jenis font kuno yang berkaki serta memiliki tebal dan tipis yang kontras. Berbeda dengan serif, Sans-serif memiliki unsur geometric yang mengikuti bentuk tertentu (lingkaran, kotak, dan segitiga) sehingga memiliki kesan kaku dan modern. ', '10 September 201', 'Gedung iSTTS Ruang N-501', ''),
 (10, './../assets/events/typograph.jpg', 'International Typography Student Poster Exhibition: Type Unite Project.', 'Type Unite adalah wadah yang memamerkan karya mahasiswa melalui poster tipografi. Sejauh perkembangannya, peserta mahasiswa yang telah aktif terdiri dari berbagai negara seperti Turki, Indonesia, Ekuador, Polandia, Uni Emirat Arab, Korea Selatan, Hungaria dan Amerika Serikat. Tujuanya Type Unite adalah menghubungkan keunikan budaya dari berbagai negara di dunia melalui karya poster tipografi. Karya poster yang ditampilkan merupakan eksperimen komposisi tipografi yang merepresentasikan suatu tema yang telah ditentukan. Melihat perkembangan yang positif ini maka Jurusan Desain Komunikasi Visual, Universitas Pelita Harapan bekerjasama dengan Type Unite untuk mengadakan pameran di tahun 2019. Pentingnya keikutsertaan mahasiswa dan dosen dalam pameran yang akan diadakan, bertujuan untuk meningkatkan mutu pembelajaran desain karena setiap karya melalui proses kurasi yang professional.', '1 November', 'Gedung iSTTS Auditorium', '');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dosen`
+--
+
+DROP TABLE IF EXISTS `dosen`;
+CREATE TABLE `dosen` (
+  `nip` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `jabatan` varchar(255) NOT NULL,
+  `gambar` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mata_kulaih`
+--
+
+DROP TABLE IF EXISTS `mata_kulaih`;
+CREATE TABLE `mata_kulaih` (
+  `id_matkul` int(11) NOT NULL,
+  `nip_dosen` int(11) NOT NULL,
+  `nama_mata_kuliah` varchar(255) NOT NULL,
+  `jurusan` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -66,6 +95,18 @@ INSERT INTO `acara` (`id_acara`, `gambar`, `judul`, `deskripsi`, `waktu`, `tempa
 --
 ALTER TABLE `acara`
   ADD PRIMARY KEY (`id_acara`);
+
+--
+-- Indexes for table `dosen`
+--
+ALTER TABLE `dosen`
+  ADD PRIMARY KEY (`nip`);
+
+--
+-- Indexes for table `mata_kulaih`
+--
+ALTER TABLE `mata_kulaih`
+  ADD PRIMARY KEY (`id_matkul`);
 
 --
 -- AUTO_INCREMENT for dumped tables
