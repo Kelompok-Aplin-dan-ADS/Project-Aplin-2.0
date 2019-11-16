@@ -1,0 +1,15 @@
+#sideBar{
+    position: relative;
+    width: 20%;
+    height: 400px;
+    background: red;
+    float: left;
+}
+.container{
+    border: 1px solid black;
+    width: 80%;
+    height: 400px;
+    position: absolute;
+    margin-left: 20%;
+    display: table;
+}
