@@ -12,17 +12,17 @@
             margin:15px;
             border:1px solid black;
             height:125px;
-            width:27%;
+            width:30%;
             float:left;
             box-sizing:border-box;
         }
         .Mid{
-            margin-left:11%;
+            margin-left:5%;
         }
         .DosenImg{
             width:100px;
             border-radius:50%;
-            float:left
+            float:left;
         }
         .DosenText{
             margin:10px;
@@ -34,87 +34,54 @@
         .kotakMain:hover {
             transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
         }
+        .font-15{
+            font-size:15px
+        }
     </style>
 </head>
-<body>
+<body onclick="tutup()">
     <?php include('fabian/navbar.php') ?>
+    <?php 
+        include("connection.php");
+        $orang=mysqli_query($conn,"SELECT * from dosen");
+    ?>
     <div class="Mid">
-        <div class="kotakMain shadow bg-white" data-toggle="modal" data-target="#exampleModalCenter">
-            <img src="..//assets//card4.jpg" class="DosenImg">
-            <div class="DosenText">
-                <span>Yongki Tanu.SPM</span>
-                <span style="font-size:15px">Pengangguran</span>
-                <span style="font-size:10px">yongkiYimyam@gmail.com</span>
-            </div>
-        </div>
-        <div class="kotakMain">
-            <img src="..//assets//card4.jpg" class="DosenImg">
-            <div class="DosenText">
-                <span>Yongki Tanu.SPM</span>
-                <span style="font-size:15px">Pengangguran</span>
-                <span style="font-size:10px">yongkiYimyam@gmail.com</span>
-                
-            </div>
-        </div>
-        <div class="kotakMain">
-            <img src="..//assets//card4.jpg" class="DosenImg">
-            <div class="DosenText">
-                <span>Yongki Tanu.SPM</span>
-                <span style="font-size:15px">Pengangguran</span>
-                <span style="font-size:10px">yongkiYimyam@gmail.com</span>
-            </div>
-        </div>
-        <div class="kotakMain">
-            <img src="..//assets//card4.jpg" class="DosenImg">
-            <div class="DosenText">
-                <span>Yongki Tanu.SPM</span>
-                <span style="font-size:15px">Pengangguran</span>
-                <span style="font-size:10px">yongkiYimyam@gmail.com</span>
-            </div>
-        </div>
-        <div class="kotakMain">
-            <img src="..//assets//card4.jpg" class="DosenImg">
-            <div class="DosenText">
-                <span>Yongki Tanu.SPM</span>
-                <span style="font-size:15px">Pengangguran</span>
-                <span style="font-size:10px">yongkiYimyam@gmail.com</span>
-            </div>
-        </div>
-        <div class="kotakMain">
-            <img src="..//assets//card4.jpg" class="DosenImg">
-            <div class="DosenText">
-                <span>Yongki Tanu.SPM</span>
-                <span style="font-size:15px">Pengangguran</span>
-                <span style="font-size:10px">yongkiYimyam@gmail.com</span>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Yongki Tanu</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <span style="font-size:15px">yongkiYimyam@gmail.com</span><br>
-                <select name="">
-                    <option value="">Pengangguran</option>
-                    <option value="">Kurang Kerjaan</option>
-                    <option value="">Kucing oren</option>
-                </select>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-            </div>
-        </div>
+        <?php
+            foreach ($orang as $key => $value) {
+                echo "
+                <div class='kotakMain shadow bg-white' onclick='tekan($value[nip])'>
+                    <img src='$value[gambar]' class='DosenImg'>
+                    <div class='DosenText'>
+                        <span style='font-size:13px'>$value[nama]</span><br>
+                        <span style='font-size:15px'>$value[jabatan]</span><br>
+                        <span style='font-size:10px'>$value[email]</span>
+                    </div>
+                </div>
+                ";
+            }
+        ?>
+        <div class="tempat"></div>
     </div>
     <?php include('fabian/footer.php') ?>
 </body>
 </html>
 <script src="../bootstrap4/js/js.js"></script>
-    <script src="../bootstrap4/js/proper.js"></script>
-    <script src="../bootstrap4/js/bootstrap.min.js"></script>
+<script src="../bootstrap4/js/proper.js"></script>
+<script src="../bootstrap4/js/bootstrap.min.js"></script>
+<script>
+    function tekan(id){
+        $.ajax({
+            method: "post",
+            url: "fabian//tekandosen.php",
+            data:{
+                id:id
+            },
+            success: function (data) {
+                $(".tempat").html(data);
+                $("#exampleModalCenter").modal("show");
+                
+            }
+        });
+    }
+    
+</script>
