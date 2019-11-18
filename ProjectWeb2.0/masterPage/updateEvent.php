@@ -32,9 +32,7 @@
         <tr>
             <td>Deskripsi  Acara: </td>
             <td>
-                <textarea name="textEvent" id="text-Area" cols="30" rows="10">
-                    <?php echo $listAcara['deskripsi'] ?>
-                </textarea>
+                <textarea name="textEvent" id="text-Area" cols="30" rows="10"><?php echo $listAcara['deskripsi'] ?></textarea>
             </td>
         </tr>
         <tr>
