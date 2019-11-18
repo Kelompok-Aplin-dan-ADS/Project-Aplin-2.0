@@ -22,7 +22,7 @@
         }
         .tengah{
             width:70%;
-            height:1500px;
+            height:100%;
             background-color: white;
             margin-left:10px;
             margin-top:50px;
@@ -34,19 +34,42 @@
             padding-left:30%;
         }
         .detail1,.detail2{
-            border:1px solid black;
             padding:10px;
             border-radius:5%;
-            margin:100px 10px;
-            box-sizing:border-box;
+            box-sizing:border-box;    
+            display: table;
+            margin-right:10px;
+        }
+        .ajaxnya{
+            list-style: none;
+            margin:0px 20px;
+        }
+        .ajaxnya li{
+            float: left;
+            
         }
         .aktif{
             background-color:brown;
             color:white;
         }
-        .tanda{
-            border:1px solid grey;
+    
+        .table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+            border: 1px solid #ddd;
         }
+        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+            border-top: 1px solid #ddd;
+        }
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        .content{
+            padding:30px;
+        }
+        
     </style>
 </head>
 <body>
@@ -54,22 +77,39 @@
         <div class="kiri-atas">AKADEMI</div>
     </div>
     <div class="tengah">
-        <span class="detail1 aktif">Tentang Jurusan</span>
-        <span class="detail2">Mata Kuliah</span>
+        <ul class="ajaxnya">
+            <li class="detail1 aktif">Tentang Jurusan</li>
+            <li class="detail2">Mata Kuliah</li>
+        </ul>
+        <div class="delimiter" style="
+            clear:both;
+            border-bottom: 1px solid #ddd;
+            margin:0px 20px;
+            "></div>
         <div class="content">
-            <table style="float:right" border="1">
-                <tr><td>TAHUN BERDIRI</td><td>1</td></tr>
-                <tr><td>AKREDITASI</td><td>2</td></tr>
-                <tr><td>GELAR</td><td>3</td></tr>
-                <tr><td>MASA STUDI</td><td>4</td></tr>
-            </table>
-            <div class="isi">
-            </div>
+            
         </div>
     </div>
 </body>
 </html>
-
+<script src="../bootstrap4/js/js.js"></script>
+<script src="../bootstrap4/js/proper.js"></script>
+<script src="../bootstrap4/js/bootstrap.min.js"></script>
+<script>
+    panggilAkademik(14);
+    function panggilAkademik(index){
+        $.ajax({
+            method: "post",
+            url: "fabian//akademikAjax.php",
+            data: {
+                id:index
+            },
+            success: function (data) {
+                $(".content").html(data);
+            }
+        });
+    }
+</script>
     
     
     
