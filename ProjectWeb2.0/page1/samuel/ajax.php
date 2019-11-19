@@ -3,11 +3,12 @@
 ?>
 <?php  
 	if ($_POST['mode'] == "pindahan1") {		
-		$t1 = $_POST['t1'];				
-		$query = mysqli_query($conn,"SELECT acara.*, jurusan.nama_jurusan FROM acara , jurusan WHERE acara.id_jurusan = jurusan.id_jurusan");
+		$t1 = $_POST['t1'];
+		// $query = mysqli_query($conn,"SELECT acara.*, jurusan.nama_jurusan FROM acara , jurusan WHERE acara.id_jurusan = $t1");
+		$query = mysqli_query($conn,"SELECT * FROM acara WHERE id_jurusan='$t1'");
 		$no = 0; 
 		while ($row = mysqli_fetch_array($query)) {
-			if ($row['nama_jurusan'] == $t1) 
+			if ($row['id_jurusan'] == $t1) 
 			{
 				if($no == 0) {
 					echo "<div class='row'>";					
