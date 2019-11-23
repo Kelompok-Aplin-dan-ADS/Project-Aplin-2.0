@@ -78,6 +78,18 @@
 <?php include('fabian/navbar.php') ?>
     <div class="kiri" >
         <div class="kiri-atas">AKADEMI</div>
+        <div>
+            <span onclick="panggilAkademik(1)">d3 informatika</span> <br>
+            <span onclick="panggilAkademik(11)">s1 informatika</span> <br>
+            <span onclick="panggilAkademik(14)">s1 informatika profesional</span> <br>
+            <span onclick="panggilAkademik(14)">s1 sib</span> <br>
+            <span onclick="panggilAkademik(14)">s1 industri</span> <br>
+            <span onclick="panggilAkademik(10)">s1 elektro</span> <br>
+            <span onclick="panggilAkademik(14)">s1 dkv</span> <br>
+            <span onclick="panggilAkademik(14)">s1 despro
+
+
+        </div>
     </div>
     <div class="tengahh">
         <ul class="ajaxnya">
