@@ -7,6 +7,7 @@
     
     if($acara->num_rows >0){
         ?>
+        <form action="updateEvent.php" method="post">
             <table border="1">
                 <thead>
                     <tr>
@@ -27,8 +28,8 @@
                                     <td><?=$miniDesc?></td>
                                     <td><?=$value['jurusan']?></td>
                                     <td>
-                                        <button value="<?=$value['id_acara']?>" class="btnUpdate">Update</button>
-                                        <button value="<?=$value['id_acara']?>" class="btnDelete">Delete</button>
+                                        <button type="submit" value="<?=$value['id_acara']?>" class="btnUpdate" name="id">Update</button>
+                                        <button type="submit" value="<?=$value['id_acara']?>" class="btnDelete" name="del">Delete</button>
                                     </td>
                                     <td></td>
                                 </tr>
@@ -37,6 +38,8 @@
                     ?>
                 </tbody>
             </table>
+        </form>
+           
         <?php
         
     }
@@ -48,19 +51,6 @@
 ?>
 <script src="jquery3.4.js"></script>
 <script>
-    $(".btnUpdate").click(function (e) { 
-        $.ajax({
-            method: "post",
-            url: "updateEvent.php",
-            data:{
-                id: $(this).val()
-            },
-            success: function (response) {
-                $(".result").html(response);
-            }
-        });
-        
-    });
     $(".btnDelete").click(function (e) { 
         $.ajax({
             method: "post",

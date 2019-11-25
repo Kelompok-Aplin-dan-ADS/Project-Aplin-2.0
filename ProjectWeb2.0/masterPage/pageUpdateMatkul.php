@@ -15,23 +15,26 @@
     <?php include('../navbar.php') ?>
     <?php include("sidebar.php") ?>
     <div class="container">
-        <div class="inputan" style="display: table-row;">
-        <span class="h1">Update Dosen</span> <br> <br>
-        <span class="h6">Cari Dosen</span> <br> <br>
-        <input type="text" name="searchName" id="" placeholder="Co: pak Agus"> <button class="btnSearch">Cari</button>
+        <h1>Update Mata Kuliah</h1> <br>
+        <span class="h6">Cari Mata Kuliah</span>&nbsp; &nbsp;
+        <input type="text" name="searchVal" id="" placeholder="Co: Sistem Digital">
+        <button class="btnSearch">Cari</button> <br>
         <div class="result"></div>
-        <br>
     </div>
 </body>
 </html>
 <script src="jquery3.4.js"></script>
 <script>
+     $(document).ready(function () {
+        $("#sideBar").removeClass("active");
+        $(".updateMat").addClass("active");
+    });
     $(".btnSearch").click(function (e) { 
         $.ajax({
             method: "post",
-            url: "Dosen/search.php",
-            data:{
-                nama: $("input[name=searchName]").val()
+            url: "mataKuliah/search.php",
+            data: {
+                name: $("input[name=searchVal]").val()
             },
             success: function (response) {
                 $(".result").html(response);

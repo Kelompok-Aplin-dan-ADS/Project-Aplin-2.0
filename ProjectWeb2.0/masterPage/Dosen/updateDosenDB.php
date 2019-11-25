@@ -1,13 +1,21 @@
 <?php
     require("config.php");
 
-    $nip = $_POST['nip'];
-    $nama = $_POST['nama'];
-    $gambar = "temp gambar";
-    $email = $_POST['email'];
-    $jabatan = $_POST['jabatan'];
-    $quotes = $_POST['quotes'];
+    if(isset($_POST['btnAdd'])){
+        $fileName = $_FILES['imgDesc']['name'];
+        $fileTmp = $_FILES['imgDesc']['tmp_name'];
 
-    $query = "UPDATE dosen SET nama='$nama',gambar='$gambar',email='$email',jabatan='$jabatan',quotes='$quotes' WHERE nip='$nip'";
-    $conn->query($query);
+        $fileDestination = "..//assets//images//".$fileName;
+        move_uploaded_file($fileTmp,$fileDestination);
+        $nip = $_POST['btnAdd'];
+        $nama = $_POST['nama'];
+        
+        $email = $_POST['email'];
+        $jabatan = $_POST['jabatan'];
+        $quotes = $_POST['quotes'];
+
+        $query = "UPDATE dosen SET nama='$nama',gambar='$fileDestination',email='$email',jabatan='$jabatan',quotes='$quotes' WHERE nip='$nip'";
+        $conn->query($query);
+        header("location:../pageDosenUpdate.php");
+    }
 ?>
