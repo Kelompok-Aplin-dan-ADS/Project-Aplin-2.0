@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
 <link rel="stylesheet" href="Fabian/fab.css">
     
     <ul class="bg-stts nav nav-pills navbar-light" >
@@ -19,10 +20,10 @@
             <a class="nav-link text-dark" href="#">KEGIATAN</a>
         </li>
         <li class="nav-item tengah ">
-            <a class="nav-link text-dark" href="#">AKADEMIK</a>
+            <a class="nav-link text-dark" href="akademik.php">AKADEMIK</a>
         </li>
         <li class="nav-item tengah ">
-            <a class="nav-link text-dark" href="#">DOSEN</a>
+            <a class="nav-link text-dark" href="dosen.php">DOSEN</a>
         </li>
         
     </ul>

@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
     <style>
         body{
-            background-color:grey;
+            
         }
         .bold{
             font-weight: bold;
@@ -20,7 +21,7 @@
             margin-top:50px;
             float:left;
         }
-        .tengah{
+        .tengahh{
             width:70%;
             height:100%;
             background-color: white;
@@ -71,12 +72,26 @@
         }
         
     </style>
+
 </head>
-<body>
+<body style="background-color:grey;">
+<?php include('fabian/navbar.php') ?>
     <div class="kiri" >
         <div class="kiri-atas">AKADEMI</div>
+        <div>
+            <span onclick="panggilAkademik(1)">d3 informatika</span> <br>
+            <span onclick="panggilAkademik(11)">s1 informatika</span> <br>
+            <span onclick="panggilAkademik(14)">s1 informatika profesional</span> <br>
+            <span onclick="panggilAkademik(14)">s1 sib</span> <br>
+            <span onclick="panggilAkademik(14)">s1 industri</span> <br>
+            <span onclick="panggilAkademik(10)">s1 elektro</span> <br>
+            <span onclick="panggilAkademik(14)">s1 dkv</span> <br>
+            <span onclick="panggilAkademik(14)">s1 despro
+
+
+        </div>
     </div>
-    <div class="tengah">
+    <div class="tengahh">
         <ul class="ajaxnya">
             <li class="detail1 aktif">Tentang Jurusan</li>
             <li class="detail2">Mata Kuliah</li>
