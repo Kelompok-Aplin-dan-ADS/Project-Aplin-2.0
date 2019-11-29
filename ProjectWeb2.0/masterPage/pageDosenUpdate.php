@@ -1,9 +1,6 @@
 <?php
     require_once("config.php");
 ?>
-<?php
-    require_once("config.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,34 +16,30 @@
     <?php include("sidebar.php") ?>
     <div class="container">
         <div class="inputan" style="display: table-row;">
-        <span class="h1">Halaman Edit Acara</span> <br> <br>
-        <div class="table"></div>
-    <pre>
-    <span class="h5">bukan yang ada anda cari?</span>    <input type="text" name="eventName" id="" placeholder="Judul Acara"> <button id="btnSearch">Cari</button>
-    </pre>
-    </div>
-    <div class="result" style="display: table-row;"></div>
+        <span class="h1">Update Dosen</span> <br> <br>
+        <span class="h6">Cari Dosen</span> <br> <br>
+        <input type="text" name="searchName" id="" placeholder="Co: pak Agus"> <button class="btnSearch">Cari</button>
+        <div class="result"></div>
+        <br>
     </div>
 </body>
 </html>
 <script src="jquery3.4.js"></script>
-<script src="search.js"></script>
 <script>
     $(document).ready(function () {
         $("#sideBar").removeClass("active");
-        $(".updateEvent").addClass("active");
+        $(".updateDosen").addClass("active");
     });
-    getTable();
-    setInterval(() => {
-        getTable();
-    }, 1000);
-    function getTable(){
+    $(".btnSearch").click(function (e) { 
         $.ajax({
-            method: "get",
-            url: "tableTop5.php",
+            method: "post",
+            url: "Dosen/search.php",
+            data:{
+                nama: $("input[name=searchName]").val()
+            },
             success: function (response) {
-                $(".table").html(response);
+                $(".result").html(response);
             }
         });
-    }
+    });
 </script>

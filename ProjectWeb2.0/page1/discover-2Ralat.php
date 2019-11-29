@@ -81,7 +81,7 @@
 
 <script>
 	function movePage1(ind){			
-		$.post("ajax.php",{mode: "pindahan1",t1: ind},
+		$.post("samuel//ajax.php",{mode: "pindahan1",t1: ind},
 			function(result){	
 				$("#bagian-1").html(result);
 			}
