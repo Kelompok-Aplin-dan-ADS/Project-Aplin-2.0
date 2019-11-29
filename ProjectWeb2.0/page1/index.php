@@ -20,3 +20,9 @@
     <script src="../bootstrap4/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<script>
+    $(".tentang").addClass("active");
+    $(".tentang").addClass("text-white");
+    $(".tentang").removeClass("text-dark");
+</script>

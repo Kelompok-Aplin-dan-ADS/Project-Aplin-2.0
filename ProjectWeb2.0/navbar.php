@@ -13,7 +13,7 @@
             </div>
         </li>
         <li class="nav-item tengah ">
-            <a class="nav-link text-white active" href="#">TENTANG</a>
+            <a class="nav-link text-white" href="#">TENTANG</a>
         </li>
         <li class="nav-item tengah ">
             <a class="nav-link text-dark" href="#">KEGIATAN</a>

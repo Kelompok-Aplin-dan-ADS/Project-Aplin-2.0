@@ -14,16 +14,16 @@
             </div>
         </li>
         <li class="nav-item tengah ">
-            <a class="nav-link text-white active" href="#">TENTANG</a>
+            <a class="nav-link text-dark tentang" href="index.php">TENTANG</a>
         </li>
         <li class="nav-item tengah ">
-            <a class="nav-link text-dark" href="#">KEGIATAN</a>
+            <a class="nav-link text-dark kegiatan" href="#">KEGIATAN</a>
         </li>
         <li class="nav-item tengah ">
-            <a class="nav-link text-dark" href="akademik.php">AKADEMIK</a>
+            <a class="nav-link text-dark akademik" href="akademik.php">AKADEMIK</a>
         </li>
         <li class="nav-item tengah ">
-            <a class="nav-link text-dark" href="dosen.php">DOSEN</a>
+            <a class="nav-link text-dark dosen" href="dosen.php">DOSEN</a>
         </li>
         
     </ul>
