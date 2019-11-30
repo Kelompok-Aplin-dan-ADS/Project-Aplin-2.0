@@ -27,4 +27,19 @@
     $(".tentang").addClass("active");
     $(".tentang").addClass("text-white");
     $(".tentang").removeClass("text-dark");
+    function cari(){
+        var kata=$("#search").val();
+        $.ajax({
+            method: "post",
+            url: "fabian//cari.php",
+            data:{
+                id:kata
+            },
+            success: function (data) {
+                $(".tempat").html(data);
+                $("#exampleModalCenter").modal("show");
+                
+            }
+        });
+    }
 </script>
