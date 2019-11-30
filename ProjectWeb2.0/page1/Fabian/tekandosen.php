@@ -17,11 +17,6 @@
             <span class="font-15"><?=$dosenTampil["jabatan"]?></span><br>
             <span class="font-15"><?=$dosenTampil["email"]?></span><br>
             <span class="font-15 font-italic"><?=$dosenTampil["quotes"]?></span><br>
-            <select name="">
-                <option value="">ITP</option>
-                <option value="">PBO</option>
-                <option value="">PV</option>
-            </select>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary tutup" data-dismiss="modal">Close</button>

@@ -69,6 +69,9 @@
 <script src="../bootstrap4/js/proper.js"></script>
 <script src="../bootstrap4/js/bootstrap.min.js"></script>
 <script>
+    $(".dosen").addClass("active");
+    $(".dosen").addClass("text-white");
+    $(".dosen").removeClass("text-dark");
     function tekan(id){
         $.ajax({
             method: "post",
@@ -83,5 +86,4 @@
             }
         });
     }
-    
 </script>
