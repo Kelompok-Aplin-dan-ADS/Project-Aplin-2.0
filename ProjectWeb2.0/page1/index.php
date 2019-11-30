@@ -10,10 +10,12 @@
 </head>
 <body>
 	<?php include('fabian/navbar.php') ?>
-    <?php include('fabian/caurousel.php') ?>
-    <?php include('yongki/page1Part2.php') ?>
-    <?php include('samuel/discover-2Ralat.php')?>
-    <?php include('Ming/calJur.php') ?>
+    <div class="content-isi">
+        <?php include('fabian/caurousel.php') ?>
+        <?php include('yongki/page1Part2.php') ?>
+        <?php include('samuel/discover-2Ralat.php')?>
+        <?php include('Ming/calJur.php') ?>
+    </div>
 	<?php include('fabian/footer.php') ?>
     <script src="../bootstrap4/js/js.js"></script>
     <script src="../bootstrap4/js/proper.js"></script>
