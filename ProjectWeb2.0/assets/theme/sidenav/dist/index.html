@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>SideNav</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Titillium+Web:400,700'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <a href="#" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+            <form action='#' action="post" class='form' enctype="multipart/form-data">
+			  <label class='label required' for='title' style="font-size: 30pt;">Halaman Masukan Acara Baru</label>
+			  <p class='field required'>
+			    <label class='label required' for='judul'>Judul Acara</label>
+			    <input class='text-input' id='name' name='judul' placeholder="Co: Pekan Kampus">
+			  </p>
+			  <p class='field'>
+			    <label class='label required' for='imgFile'>Gambar Acara</label>
+			    <input class='file-input' id='name' name='imgFile' type='file'>
+			  </p>
+			  <p class='field required'>
+			    <label class='label' for='textEvent'>Deskripsi  Acara: </label>
+			    <textarea class='textarea' cols='50' id='about' name='textEvent' rows='4'></textarea>
+			  </p>
+			  <p class='field required'>
+			    <label class='label' for='waktuAcara'>Waktu Acara</label>
+			    <input class='text-input' id='waktuAcara' required name='waktuAcara' type='date'>
+			  </p>
+			  <p class='field required'>
+			    <label class='label' for='place'>Tempat Acara</label>
+			    <input class='text-input' id='place' name='place' required type='text'>
+			  </p>
+			  <p class='field half required'>
+			    <label class='label' for='linkPage'>Link Halaman</label>
+			    <input class='text-input' id='linkPage' name='linkPage' required type='text'>
+			  </p>
+			  <p class='field half'>
+			    <label class='label' for='kategori'>Kategori</label>
+			    <select class='select' id='select' name="kategori">
+			      <option value="Berita">Berita</option>
+			      <option value="Acara">Acara</option>
+			      <option value="Media">Media</option>
+			      <option value="Agenda">Agenda</option>
+			      <option value="Teknologi">Teknologi</option>
+			    </select>
+			  </p>
+			  <p class='field'>
+			    <label class='label' for='jurusan'>Acara Jurusan</label>
+			    <select class='select' name="jurusan" id='jurusan'>
+			      <option value="S1-Informatika">S1-Informatika</option>
+			      <option value="S1-DKV">S1-DKV</option>
+			      <option value="S1-SIB">S1-SIB</option>
+			      <option value="S1-Elektro">S1-Elektro</option>
+			      <option value="S1-Industri">S1-Industri</option>
+			      <option value="D3-Informatika">D3-Informatika</option>
+			    </select>
+			  </p>
+			  <p class='field'>
+			    <input class='button' type='submit' value='Send'>
+			  </p>
+			</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	
+	
+	
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script  src="./script.js"></script>
+
+</body>
+</html>

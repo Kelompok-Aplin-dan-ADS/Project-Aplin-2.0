@@ -1,24 +1,9 @@
-#sideBar{
-    display: table;
-    position: relative;
-    top: 10px;
-    width: 15%;
-    height: 400px;
-    float: left;
-}
-.sideBody{
-    position: relative;
-    height: 65px;
-    border: 1px solid grey;
-    padding: 18px;
-    box-sizing: border-box;
-}
+
 .active{
     background: #E6E6E6;
 }
 .container{
-    border: 1px solid black;
-    width: 85%;
+    width: 70%;
     height: 400px;
     position: absolute;
     margin-left: 15%;
