@@ -1,6 +1,6 @@
 <?php
     include_once("..//connection.php");
-    $id=5;
+    $id=$_GET["acara"];
     $semuaAcara=mysqli_fetch_assoc(mysqli_query($conn,"SELECT * from acara where id_acara=$id"));
     
 ?>

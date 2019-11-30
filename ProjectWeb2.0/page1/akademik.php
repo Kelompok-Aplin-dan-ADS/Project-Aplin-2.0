@@ -70,7 +70,12 @@
         .content{
             padding:30px;
         }
-        
+        .deli{
+            text-align:center;
+        }
+        .deli:hover{
+            text-decoration:underline;
+        }
     </style>
 
 </head>
@@ -79,22 +84,39 @@
     <div class="kiri" >
         <div class="kiri-atas">AKADEMI</div>
         <div>
-            <span onclick="panggilAkademik(1)">d3 informatika</span> <br>
-            <span onclick="panggilAkademik(11)">s1 informatika</span> <br>
-            <span onclick="panggilAkademik(14)">s1 informatika profesional</span> <br>
-            <span onclick="panggilAkademik(14)">s1 sib</span> <br>
-            <span onclick="panggilAkademik(14)">s1 industri</span> <br>
-            <span onclick="panggilAkademik(10)">s1 elektro</span> <br>
-            <span onclick="panggilAkademik(14)">s1 dkv</span> <br>
-            <span onclick="panggilAkademik(14)">s1 despro
+        
+        <div class='deli'>
+        <h5>DIPLOMA 3</h5>
+            <span onclick='panggilAkademik(1)'>D3 Sistem Informasi</span>
+        </div>
+        <br>
+        <div class="deli">
+            <h5>STRATA 1</h5>
+        </div>
+        <?php
+        
+            include("connection.php");
+            $jurusan=mysqli_query($connStts,"SELECT * from jurusan_bahasa where jurusan_id<>2 AND jurusan_id<>1 order by jurusan_id asc ");
+            foreach ($jurusan as $key => $value) {
+                echo "
+                    <div class='deli'>
+                        <span onclick='panggilAkademik($value[jurusan_id])'>$value[jurusan_nama]</span> 
+                    </div>
+                ";
+            }
 
+        ?><br>
+        
+        <div class='deli'><h5>Program Internasional</h5>
+            <span onclick='panggilAkademik(2)'>Bachelor of Information Technology</span> 
+        </div><br>
 
         </div>
     </div>
     <div class="tengahh">
         <ul class="ajaxnya">
-            <li class="detail1 aktif">Tentang Jurusan</li>
-            <li class="detail2">Mata Kuliah</li>
+            <li class="detail1 aktif" onclick="detail()">Tentang Jurusan</li>
+            <li class="detail2" onclick="matakuliah()" >Mata Kuliah</li>
         </ul>
         <div class="delimiter" style="
             clear:both;
@@ -105,19 +127,52 @@
             
         </div>
     </div>
+    <input type="hidden" id="hidden" value="14">
 </body>
 </html>
 <script src="../bootstrap4/js/js.js"></script>
 <script src="../bootstrap4/js/proper.js"></script>
 <script src="../bootstrap4/js/bootstrap.min.js"></script>
 <script>
+    $(".akademik").addClass("active");
+    $(".akademik").addClass("text-white");
+    $(".akademik").removeClass("text-dark");
     panggilAkademik(14);
     function panggilAkademik(index){
+        $("#hidden").val(index);
         $.ajax({
             method: "post",
             url: "fabian//akademikAjax.php",
             data: {
                 id:index
+            },
+            success: function (data) {
+                $(".content").html(data);
+            }
+        });
+    }
+    function matakuliah(){
+        $(".detail2").addClass("aktif");
+        $(".detail1").removeClass("aktif");
+        $.ajax({
+            method: "post",
+            url: "fabian//akademik_matakuliah_ajax.php",
+            data: {
+                id:$("#hidden").val()
+            },
+            success: function (data) {
+                $(".content").html(data);
+            }
+        });
+    }
+    function detail(){
+        $(".detail1").addClass("aktif");
+        $(".detail2").removeClass("aktif");
+        $.ajax({
+            method: "post",
+            url: "fabian//akademikAjax.php",
+            data: {
+                id:$("#hidden").val()
             },
             success: function (data) {
                 $(".content").html(data);
