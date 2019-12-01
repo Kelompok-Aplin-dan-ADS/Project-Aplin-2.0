@@ -13,7 +13,7 @@
     		border: 1px solid grey;
     		width: 100%;
     	}
-    	#content-berita-agenda,#content-media{
+    	#content{
     		border: 1px solid black;
     		height: 70vh;
     	}
@@ -23,17 +23,16 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8">				<!-- #943434-->
-				<button type="button" style="width: 50%;"  id="bagian1" onclick="pilihacara(1)" class="btn">Berita</button>
-				<button type="button" style="width: 49%;" id="bagian2" onclick="pilihacara(2)" class="btn">Agenda</button>
-			</div>			
-			<div id="content-berita-agenda" class="col-md-8">
-				
+			<div class="col-md-6" >			<!-- #943434-->
+				<button type="button" id="bagian1" onclick="pilihacara(1)" class="btn">Berita</button>
+				<button type="button" id="bagian1" onclick="pilihacara(2)" class="btn">Agenda</button>
+				<button type="button" id="bagian1" onclick="pilihacara(3)" class="btn">Teknologi</button>
+				<button type="button" id="bagian1" onclick="pilihacara(4)" class="btn">Lowongan</button>
+				<button type="button" id="bagian1" onclick="pilihacara(5)" class="btn">Abstrak</button>
+				<div id="garis"></div>
 			</div>
-			<div class="col-md-4">
-				<div id="content-media">
-					
-				</div>
+			<div id="content" class="col-md-12">
+				
 			</div>
 		</div>
 	</div>
@@ -42,8 +41,8 @@
 <script>
 	function pilihacara(ind){
 		$.post("ajax_media.php",{mode:"media" , t1:ind},
-			function(result){				
-				$("#content-berita-agenda").html(result);
+			function(result){
+				$("#content").html(result);
 			}
 		);
 	}

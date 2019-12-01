@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<style>
 		.container #judul{
 	        position: relative;
@@ -28,7 +28,7 @@
 		    transition: 0.5s ease all;
 		}
 
-		.nav-links{
+		.nav-link{
 			margin-top:5%;
 			height: 8vh; 
 			width: 320px; 
@@ -40,8 +40,8 @@
 		}
 	</style>
 </head>
-<body >
-	<div class="container"style="clear:both">
+<body>
+	<div class="container">
 		<div class="row">
 			<div class="col-md-2">
 				<p id="judul">DISCOVER</p>
@@ -59,12 +59,12 @@
 		<div class="row">
 			<div class="col-md-4">				
 				<div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-                  <a class="nav-links active" id="11"  onclick="movePage1(11)" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-profile" aria-selected="false">Teknik Informatika</a>
-                  <a class="nav-links" id="18" onclick="movePage1(18)" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Sistem Informasi Bisnis</a>
-                  <a class="nav-links" id="12" onclick="movePage1(12)" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Teknik Industri</a>
-                  <a class="nav-links" id="10" onclick="movePage1(10)" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Teknik Elektro</a>
-                  <a class="nav-links" id="14" onclick="movePage1(14)" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Desain Produk </a>
-                  <a class="nav-links" id="17" onclick="movePage1(17)" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Desain komunikasi Visual</a>
+                  <a class="nav-link active" id="11"  onclick="movePage1(11)" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-profile" aria-selected="false">Teknik Informatika</a>
+                  <a class="nav-link" id="18" onclick="movePage1(18)" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Sistem Informasi Bisnis</a>
+                  <a class="nav-link" id="12" onclick="movePage1(12)" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Teknik Industri</a>
+                  <a class="nav-link" id="10" onclick="movePage1(10)" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Teknik Elektro</a>
+                  <a class="nav-link" id="14" onclick="movePage1(14)" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Desain Produk </a>
+                  <a class="nav-link" id="17" onclick="movePage1(17)" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Desain komunikasi Visual</a>
                 </div> 
 			</div>
 		<!-- ---------------->
@@ -80,7 +80,6 @@
 </html>
 
 <script>
-	movePage1(11);
 	function movePage1(ind){			
 		$.post("samuel//ajax.php",{mode: "pindahan1",t1: ind},
 			function(result){	

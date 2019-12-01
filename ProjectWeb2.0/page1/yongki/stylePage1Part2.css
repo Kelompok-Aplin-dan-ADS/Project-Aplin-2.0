@@ -1,0 +1,36 @@
+.whySTTS{
+    position: relative;
+    top: 100px;
+    height: 140px;
+    width: 0;
+    white-space: nowrap;
+    transform: translate(0px, 110px);
+    transform: rotate(-90deg);
+    float: left;
+}
+.card-img-right{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+.hoverCard{
+    transition: 0.5s ease all;
+}
+.card-gedung{
+    background-repeat: no-repeat;
+    height: 400px;
+}
+.fontSubtitle{
+    font-family: "Frank Ruhl Libre",serif;
+    color:white;
+    margin-bottom: .8em;
+    font-weight: 300;
+}
+
+.hoverCard:hover{
+    -webkit-box-shadow: 10px 21px 29px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 21px 29px -1px rgba(0,0,0,0.75);
+    box-shadow: 10px 21px 29px -1px rgba(0,0,0,0.75);
+    transition: 0.5s ease all;
+}
