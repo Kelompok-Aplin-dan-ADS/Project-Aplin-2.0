@@ -13,7 +13,7 @@
     <div class="content-isi">
         <?php include('fabian/caurousel.php') ?>
         <?php include('yongki/page1Part2.php') ?>
-        <?php include('samuel/discover-2Ralat.php')?>
+        <?php include('discover-2Ralat.php')?>
         <?php include('Ming/calJur.php') ?>
     </div>
 	<?php include('fabian/footer.php') ?>
