@@ -1,4 +1,0 @@
-id_matkul
-nip_dosen
-nama_mata_kuliah
-jurusan
