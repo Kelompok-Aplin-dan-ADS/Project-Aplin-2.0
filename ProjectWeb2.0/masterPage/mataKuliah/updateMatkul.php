@@ -25,6 +25,12 @@
         <td><input type="text" name="newMat" id="" value="<?=$matkul['nama_mata_kuliah']?>" required></td>
     </tr>
     <tr>
+        <td>Deskripsi</td>
+        <td>
+            <textarea name="desc" id="desc" cols="30" rows="4"><?=$matkul['deskripsi']?></textarea>
+        </td>
+    </tr>
+    <tr>
         <td>Jurusan</td>
         <td>
             <select name="jurusan" id="jurusan">
@@ -59,7 +65,8 @@
             data: {
                 id_matkul : $("input[name=kode]").val(),
                 nama_mata_kuliah : $("input[name=newMat]").val(),
-                jurusan : $("select[name=jurusan]").val()
+                jurusan : $("select[name=jurusan]").val(),
+                desc: $("#desc").val()
             },
             success: function (response) {
                 alert("terupdate");
