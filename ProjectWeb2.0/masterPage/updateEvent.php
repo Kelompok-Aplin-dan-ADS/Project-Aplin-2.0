@@ -20,7 +20,12 @@
         $waktu = $_POST['waktuAcara'];
         $tempat = $_POST['place'];
         $link = $_POST['linkPage'];
-        $tag = " ";
+        $tag="";
+        if(!empty($_POST["tag"])){
+          foreach ($_POST['tag'] as $key => $value) {
+            $tag.= $value."|";
+          }
+        }
         $kategori = $_POST['kategori'];
         $jurusan = $_POST['jurusan'];
         $query = "UPDATE acara SET judul='$judul',gambar='$fileDestination',deskripsi='$desc',waktu='$waktu',tempat='$tempat',link_halaman='$link',tag='$tag',kategori='$kategori',jurusan='$jurusan' WHERE id_acara = '$id'";
@@ -57,11 +62,17 @@
         $arrIndex[7] = "18";
         $arrIndex[8] = "21";
         $arrIndex[9] = "31";
+
+        $arrKat = [];
+        $arrKat[0] = "Berita";
+        $arrKat[1] = "Agenda";
+        $arrKat[2] = "Media";
     }
     
+    $query = "SELECT * FROM tag";
+    $listTag = $conn->query($query);
 
-
-
+    $selectedTag = explode("|",$listAcara['tag']);
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -81,7 +92,7 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li><a href="index.php">Insert Event</a> </li>
+        <li><a href="index2.php">Insert Event</a> </li>
         <li><a href="pageUpdate.php">Update Event</a> </li>
         <li><a href="inputDosen.php">Insert Dosen</a></li>
         <li><a href="pageDosenUpdate.php">Update Dosen</li>
@@ -97,7 +108,7 @@
           <div class="col-lg-12">
             <a href="#" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
             <form action="#" method="post" class="form" enctype="multipart/form-data">
-              <label class='label required' for='title' style="font-size: 30pt;">Halaman Masukan Acara Baru</label>
+              <label class='label required' for='title' style="font-size: 30pt;">Update Acara</label>
               <p class='field required'>
                 <label class='label required' for='judul'>Judul Acara</label>
                 <input class='text-input' id='name' name='judul' placeholder="Co: Pekan Kampus" value="<?= $listAcara['judul'] ?>">
@@ -118,16 +129,38 @@
                 <label class='label' for='place'>Tempat Acara</label>
                 <input class='text-input' id='place' name='place' required type='text' value="<?=$listAcara['tempat']?>">
               </p>
-              <p class='field half required'>
-                <label class='label' for='linkPage'>Tag Halaman</label>
-                <input class='text-input' id='linkPage' name='linkPage' required type='text' value="<?=$listAcara['link_halaman'] ?>">
+              <p class='field half'>
+                <label class='label' for='Tag'>Tag</label>
+                <?php
+                  foreach ($listTag as $key => $value) {
+                    if(in_array($value['tag_id'],$selectedTag)){
+                      ?><input type="checkbox" name="tag[]" id="tag" value="<?=$value['tag_id']?>" checked><?=$value['tag_nama_1']?> <br>
+                      <?php
+                    }
+                    else{
+                      ?><input type="checkbox" name="tag[]" id="tag" value="<?=$value['tag_id']?>"><?=$value['tag_nama_1']?> <br>
+                      <?php
+                    }
+                  }
+                ?>
               </p>
               <p class='field half'>
                 <label class='label' for='kategori'>Kategori</label>
                 <select class="select" name="kategori" id="kategori">
-                    <option value="1">Berita</option>
-                    <option value="2">Agenda</option>
-                    <option value="3">Media</option>
+                  <?php
+                  $ctr = 1;
+                    foreach ($arrKat as $key => $value) {
+                      if($ctr == $listAcara['kategori']){
+                        ?><option value="<?=$ctr?>" selected><?=$value?></option>
+                        <?php
+                      }
+                      else{
+                        ?><option value="<?=$ctr?>"><?=$value?></option>
+                        <?php
+                      }
+                      $ctr++;
+                    }
+                  ?>
                 </select>
               </p>
               <p class='field'>
