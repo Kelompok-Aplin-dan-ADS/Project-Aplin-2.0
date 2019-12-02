@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<style>
 		.container #judul{
 	        position: relative;
@@ -80,8 +80,9 @@
 </html>
 
 <script>
+	movePage1(11);
 	function movePage1(ind){			
-		$.post("ajax.php",{mode: "pindahan1",t1: ind},
+		$.post("samuel//ajax.php",{mode: "pindahan1",t1: ind},
 			function(result){	
 				$("#bagian-1").html(result);
 			}
