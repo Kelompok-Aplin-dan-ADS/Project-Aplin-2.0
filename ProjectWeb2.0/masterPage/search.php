@@ -27,7 +27,7 @@
                                     <td><?=$value['judul']?></td>
                                     <td><?=$miniDesc?></td>
                                     <td><?=$value['jurusan']?></td>
-                                    <td>
+                                    <td style="color: blue;">
                                         <button type="submit" value="<?=$value['id_acara']?>" class="btnUpdate" name="id">Update</button>
                                         <button type="submit" value="<?=$value['id_acara']?>" class="btnDelete" name="del">Delete</button>
                                     </td>

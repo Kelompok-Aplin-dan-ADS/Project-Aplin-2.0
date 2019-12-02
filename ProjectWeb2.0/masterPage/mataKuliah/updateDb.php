@@ -13,7 +13,7 @@
     $nama_mata_kuliah = $_POST['nama_mata_kuliah'];
     $jurusan = $_POST['jurusan'];
     
-    $query = "UPDATE mata_kuliah SET id_matkul ='$id_matkul',nip_dosen ='$nip',nama_mata_kuliah = '$nama_mata_kuliah',jurusan = '$jurusan' WHERE id_matkul = '$id_matkul'";
+    $query = "UPDATE mata_kuliah SET id_matkul ='$id_matkul',nama_mata_kuliah = '$nama_mata_kuliah',jurusan = '$jurusan' WHERE id_matkul = '$id_matkul'";
     
     $conn->query($query);
 ?>

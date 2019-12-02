@@ -12,7 +12,6 @@
                 <thead>
                     <tr>
                         <td>Kode Matkul</td>
-                        <td>Nama Dosen</td>
                         <td>Nama Mata Kuliah</td>
                         <td>Jurusan</td>
                         <td>Action</td>
@@ -21,13 +20,9 @@
                 <tbody>
                     <?php
                         foreach ($matKul as $key => $value) {
-                            $query = "SELECT * FROM dosen WHERE nip = '$value[nip_dosen]'";
-                            $temp = $conn->query($query);
-                            $namaDosen = mysqli_fetch_assoc($temp);
                             ?>
                                 <tr>
                                     <td><?=$value['id_matkul']?></td>
-                                    <td><?=$namaDosen['nama']?></td>
                                     <td><?=$value['nama_mata_kuliah']?></td>
                                     <td><?=$value['jurusan']?></td>
                                     <td>

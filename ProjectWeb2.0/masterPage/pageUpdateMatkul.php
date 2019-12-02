@@ -5,30 +5,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <title>SideNav</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="themeCss.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Titillium+Web:400,700'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 <body>
-    <?php include('../navbar.php') ?>
-    <?php include("sidebar.php") ?>
-    <div class="container">
-        <h1>Update Mata Kuliah</h1> <br>
-        <span class="h6">Cari Mata Kuliah</span>&nbsp; &nbsp;
-        <input type="text" name="searchVal" id="" placeholder="Co: Sistem Digital">
-        <button class="btnSearch">Cari</button> <br>
-        <div class="result"></div>
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li><a href="index.php">Insert Event</a> </li>
+        <li><a href="pageUpdate.php">Update Event</a> </li>
+        <li><a href="inputDosen.php">Insert Dosen</a></li>
+        <li><a href="pageDosenUpdate.php">Update Dosen</li>
+        <li><a href="inputMatkul.php">Insert Mata Kuliah</a></li>
+        <li><a href="pageUpdateMatkul.php">Update Mata Kuliah</a></li>
+      </ul>
     </div>
+    
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <a href="#" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+            <form action="#" method="post" class="form" enctype="multipart/form-data">
+              <p class='field'>
+                    <label class='label' for='title' style="font-size:30pt;">Update Mata Kuliah</label>
+                  </p>
+              <p class='field half'>
+                <label class='label required' for='searchVal'>Cari Mata Kuliah</label>
+                <input class='text-input' id='searchVal' name='searchVal' type='text'>
+              </p>
+              <p class="field half">
+                <input type="button" name="" class="btnSearch button" style="position: relative; left: -290px;" value="Cari">
+              </p>
+            </form>
+            <div class="result" style="width: auto;margin-left: 15%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 <script src="jquery3.4.js"></script>
+<script src="scriptTheme.js"></script>
 <script>
-     $(document).ready(function () {
-        $("#sideBar").removeClass("active");
-        $(".updateMat").addClass("active");
-    });
     $(".btnSearch").click(function (e) { 
         $.ajax({
             method: "post",

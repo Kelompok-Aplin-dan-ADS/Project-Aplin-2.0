@@ -7,7 +7,7 @@
     if($dosen->num_rows >0){
         foreach ($dosen as $key => $value) {
             echo "
-            <div class='kotakMain shadow bg-white' onclick='getMore($value[nip])'>
+            <div class='kotakMain shadow' onclick='getMore($value[nip])'>
                 <img src='$value[gambar]' class='DosenImg'>
                 <div class='DosenText'>
                     <span style='font-size:13px'>$value[nama]</span><br>
@@ -33,16 +33,17 @@
 <script src="../bootstrap4/js/bootstrap.min.js"></script>
 <script>
     function getMore(nip) {
-        $.ajax({
-            type: "post",
-            url: "Dosen/more.php",
-            data: {
-                nip:nip
-            },
-            success: function (response) {
-                $(".pop").html(response);
-                $("#exampleModalCenter").modal("show");
-            }
-        });
+        // $.ajax({
+        //     type: "post",
+        //     url: "Dosen/more.php",
+        //     data: {
+        //         nip:nip
+        //     },
+        //     success: function (response) {
+        //         $(".pop").html(response);
+        //         $("#exampleModalCenter").modal("show");
+        //     }
+        // });
+        window.location.replace("Dosen/updateDosen.php?nip="+nip);
     }
 </script>
