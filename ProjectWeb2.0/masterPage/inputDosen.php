@@ -24,61 +24,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="themeCss.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Titillium+Web:400,700'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 <body>
-    <?php include('../navbar.php') ?>
-    <?php include("sidebar.php") ?>
-    <div class="container">
-        <div class="inputan" style="display: table-row;">
-        <span class="h1">Tambah Dosen Baru</span> <br>
-        <form action="#" method="post" enctype="multipart/form-data">
-            <table>
-                <tr>
-                    <td>Nama</td>
-                    <td><input type="text" name="nama" id=""></td>
-                </tr>
-                <tr>
-                    <td>Gambar</td>
-                    <td><input type="file" name="imgFile" id=""></td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td><input type="email" name="email" id=""></td>
-                </tr>
-                <tr>
-                    <td>Jabatan</td>
-                    <td><input type="text" name="jabatan" id=""></td>
-                </tr>
-                <tr>
-                    <td>Quotes</td>
-                    <td>
-                        <textarea name="quotes" id="" cols="30" rows="10"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="submit" name="btnAdd" value="Tambah" id=""></td>
-                </tr>
-            </table>
-        </form>
-
-        <br>
-
-        </div>
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li><a href="index.php">Insert Event</a> </li>
+        <li><a href="pageUpdate.php">Update Event</a> </li>
+        <li><a href="inputDosen.php">Insert Dosen</a></li>
+        <li><a href="pageDosenUpdate.php">Update Dosen</li>
+        <li><a href="inputMatkul.php">Insert Mata Kuliah</a></li>
+        <li><a href="pageUpdateMatkul.php">Update Mata Kuliah</a></li>
+      </ul>
     </div>
+    
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <a href="#" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+            <form action="#" method="post" class="form" enctype="multipart/form-data">
+              <label class='label required' for='title' style="font-size: 30pt;">Tambah Dosen Baru</label>
+              <p class='field required'>
+                <label class='label required' for='nama'>Nama</label>
+                <input class='text-input' id='name' name='nama' placeholder="Co: Pak Agus">
+              </p>
+              <p class='field'>
+                <label class='label required' for='imgFile'>Gambar Acara</label>
+                <input class='file-input' id='name' name='imgFile' type='file'>
+              </p>
+              <p class='field required'>
+                <label class='label' for='email'>Email</label>
+                <input class='text-input' id='email' name='email' required type='email'>
+              </p>
+              <p class='field required'>
+                <label class='label' for='jabatan'>Jabatan</label>
+                <input class='text-input' id='jabatan' name='jabatan' required type='text'>
+              </p>
+              <p class='field required'>
+                <label class='label' for='quotes'>Quotes</label>
+                <textarea class='textarea' cols='50' id='about' name='quotes' rows='4'></textarea>
+              </p>
+              <p class='field'>
+                <input class='button' type='submit' name="btnAdd" value='Kirim'>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 <script src="jquery3.4.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#sideBar").removeClass("active");
-        $(".insertDosen").addClass("active");
-    });
-</script>
+<script src="scriptTheme.js"></script>
 

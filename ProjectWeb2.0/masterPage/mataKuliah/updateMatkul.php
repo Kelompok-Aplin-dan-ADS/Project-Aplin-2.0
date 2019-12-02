@@ -13,39 +13,12 @@
     $query = "SELECT * FROM mata_kuliah WHERE id_matkul = '$id_matkul'";
     $temp = $conn->query($query);
     $matkul = mysqli_fetch_assoc($temp);
-
-    $query = "SELECT * FROM dosen WHERE nip = '$matkul[nip_dosen]'";
-    $temp = $conn->query($query);
-    $namaDosen = mysqli_fetch_assoc($temp);
 ?>
 <br>
 <table>
     <tr>
         <td>Kode Mata kuliah</td>
         <td><input type="text" name="kode" id="" value="<?=$matkul['id_matkul']?>" required></td>
-    </tr>
-    <tr>
-        <td>Nama Dosen Pengajar</td>
-        <td>
-            <select name="dosenName" id="">
-                <?php
-                    $query = "SELECT * FROM dosen";
-                    $listDosen = $conn->query($query);
-                    foreach ($listDosen as $key => $value) {
-                        if($value['nama'] == $namaDosen['nama']){
-                            ?>
-                            <option value="<?=$value['nama']?>" selected><?=$value['nama']?></option>
-                            <?php
-                        }
-                        else{
-                            ?>
-                            <option value="<?=$value['nama']?>"><?=$value['nama']?></option>
-                            <?php
-                        }
-                    }
-                ?>
-            </select>
-        </td>
     </tr>
     <tr>
         <td>Nama Mata Kuliah Baru</td>
@@ -85,13 +58,11 @@
             url: "mataKuliah/updateDb.php",
             data: {
                 id_matkul : $("input[name=kode]").val(),
-                namaDosen : $("select[name=dosenName]").val(),
                 nama_mata_kuliah : $("input[name=newMat]").val(),
                 jurusan : $("select[name=jurusan]").val()
             },
             success: function (response) {
-                console.log("test");
-                
+                alert("terupdate");
             }
         });
     });

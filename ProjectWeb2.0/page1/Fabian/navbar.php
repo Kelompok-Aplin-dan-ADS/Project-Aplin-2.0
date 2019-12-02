@@ -17,7 +17,7 @@
             <a class="nav-link text-dark tentang" href="index.php">TENTANG</a>
         </li>
         <li class="nav-item tengah ">
-            <a class="nav-link text-dark kegiatan" href="#">KEGIATAN</a>
+            <a class="nav-link text-dark kegiatan" href="Kegiatan.php">KEGIATAN</a>
         </li>
         <li class="nav-item tengah ">
             <a class="nav-link text-dark akademik" href="akademik.php">AKADEMIK</a>

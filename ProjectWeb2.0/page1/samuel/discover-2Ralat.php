@@ -1,6 +1,3 @@
-<?php  
-	require_once("koneksi.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,7 +82,7 @@
 <script>
 	function movePage1(ind){			
 		$.post("ajax.php",{mode: "pindahan1",t1: ind},
-			function(result){									
+			function(result){	
 				$("#bagian-1").html(result);
 			}
 		);
