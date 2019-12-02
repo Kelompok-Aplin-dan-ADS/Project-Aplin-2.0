@@ -13,8 +13,8 @@
         $id_matkul = $_POST['kode'];
         $nama_mata_kuliah = $_POST['newMat'];
         $jurusan = $_POST['jurusan'];
-
-        $query = "INSERT INTO mata_kuliah VALUES('$id_matkul','$nama_mata_kuliah','$jurusan')";
+        $desc = $_POST['desc'];
+        $query = "INSERT INTO mata_kuliah VALUES('$id_matkul','$nama_mata_kuliah','$jurusan','$desc')";
         $conn->query($query);
     }
     
@@ -71,6 +71,10 @@
                   <option value="S1-Industri">S1-Industri</option>
                   <option value="D3-Informatika">D3-Informatika</option>
                 </select>
+              </p>
+              <p class='field required'>
+                <label class='label' for='quotes'>Deskripsi</label>
+                <textarea class='textarea' cols='50' id='desc' name='desc' rows='4'></textarea>
               </p>
               <p class='field'>
                 <input class='button' type='submit' name="btnAdd" value='Kirim'>

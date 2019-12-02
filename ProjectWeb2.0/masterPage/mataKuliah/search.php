@@ -14,6 +14,7 @@
                         <td>Kode Matkul</td>
                         <td>Nama Mata Kuliah</td>
                         <td>Jurusan</td>
+                        <td>Deskripsi</td>
                         <td>Action</td>
                     </tr>
                 </thead>
@@ -25,6 +26,7 @@
                                     <td><?=$value['id_matkul']?></td>
                                     <td><?=$value['nama_mata_kuliah']?></td>
                                     <td><?=$value['jurusan']?></td>
+                                    <td><?=$value['deskripsi']?></td>
                                     <td>
                                         <button class="update" value="<?=$value['id_matkul']?>">Update</button>
                                         <button class="delete" value="<?=$value['id_matkul']?>">Delete</button>
