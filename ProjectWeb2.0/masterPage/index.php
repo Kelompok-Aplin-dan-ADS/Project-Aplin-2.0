@@ -2,6 +2,7 @@
     require_once("config.php");
 
     if(isset($_POST["btnSend"])){
+        
         $fileName = $_FILES['imgFile']['name'];
         $fileTmp = $_FILES['imgFile']['tmp_name'];
         $fileDestination = "./../assets/events/".$fileName;
@@ -11,24 +12,23 @@
         $waktu = $_POST['waktuAcara'];
         $tempat = $_POST['place'];
         $link = "temp link";
-        //$tag = $_POST['eventTag'];
+        $tag = $_POST['eventTag'];
         $kategori = $_POST['kategori'];
         $jurusan = $_POST['jurusan'];
 
-        $query = "INSERT INTO acara VALUES('','$fileDestination','$judul','$desc','$waktu','$tempat','$link','','$kategori','$jurusan')";
+        $query = "INSERT INTO acara VALUES('','$fileDestination','$judul','$desc','$waktu','$tempat','$link','$tag','$kategori','$jurusan')";
         $conn->query($query);
     }
 ?>
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SideNav</title>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="themeCss.css">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Titillium+Web:400,700'>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -148,42 +148,14 @@
       }
     }
 
-    show() {
-      var base, base1, el;
-      if (!(typeof (base = ['INPUT', 'SELECT', 'TEXTAREA']).includes === "function" ? base.includes((el = document.activeElement).nodeName) : void 0)) {
-        return;
-      }
-      clearTimeout(this.reset);
-      if (typeof (base1 = ['checkbox', 'radio']).includes === "function" ? base1.includes(el.type) : void 0) {
-        el = document.querySelector(`[for=${el.id}]`);
-      }
-      this.focus.style.top = `${el.offsetTop || 0}px`;
-      this.focus.style.left = `${el.offsetLeft || 0}px`;
-      this.focus.style.width = `${el.offsetWidth || 0}px`;
-      return this.focus.style.height = `${el.offsetHeight || 0}px`;
-    }
-
-    hide() {
-      var base, el;
-      if (!(typeof (base = ['INPUT', 'SELECT', 'TEXTAREA', 'LABEL']).includes === "function" ? base.includes((el = document.activeElement).nodeName) : void 0)) {
-        this.focus.style.width = 0;
-      }
-      return this.reset = setTimeout(function() {
-        return window.magicFocus.focus.removeAttribute('style');
-      }, 200);
-    }
-
-  };
-
-  // initialize
-  window.magicFocus = new magicFocus(document.querySelector('.form'));
-
-  $(function() {
-    return $('.select').customSelect();
-  });
-
-}).call(this);
-});
-  </script>
+        </div>
+    </div>
 </body>
 </html>
+<script src="jquery3.4.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#sideBar").removeClass("active");
+        $(".insertEvent").addClass("active");
+    });
+</script>
