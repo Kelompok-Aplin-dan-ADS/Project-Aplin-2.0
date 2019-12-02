@@ -17,7 +17,7 @@
 	    <!-- Sidebar -->
 	    <div id="sidebar-wrapper">
 	      <ul class="sidebar-nav">
-	        <li><a href="index.php">Insert Event</a> </li>
+		  	<li><a href="index2.php">Insert Event</a> </li>
 	        <li><a href="pageUpdate.php">Update Event</a> </li>
 	        <li><a href="inputDosen.php">Insert Dosen</a></li>
 	        <li><a href="pageDosenUpdate.php">Update Dosen</li>

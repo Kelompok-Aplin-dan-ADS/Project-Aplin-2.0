@@ -26,7 +26,8 @@
             <a class="nav-link text-dark dosen" href="dosen.php">DOSEN</a>
         </li>
         <li class="nav-item tengah ">
-            <input type="text" onkeydown="cari()" id="search" placeholder="search">
+            <a class="nav-link text-dark about" href="about.php">ABOUT</a>
         </li>
+        
     </ul>
 </div> 

@@ -35,12 +35,28 @@
         $listAcara = mysqli_fetch_assoc($acara);
 
         $arrJurusan = [];
-        $arrJurusan[0] = "S1-Informatika";
-        $arrJurusan[1] = "S1-DKV";
-        $arrJurusan[2] = "S1-SIB";
-        $arrJurusan[3] = "S1-Elektro";
-        $arrJurusan[4] = "S1-Industri";
-        $arrJurusan[5] = "D3-Informatika";
+        $arrJurusan[0] = "D3 Sistem Informasi";
+        $arrJurusan[1] = "Bachelor of Information Technology";
+        $arrJurusan[2] = "Strata-1 Teknik Elektro";
+        $arrJurusan[3] = "Strata-1 Informatika";
+        $arrJurusan[4] = "Strata-1 Teknik Industri";
+        $arrJurusan[5] = "Desain Produk"; 
+        $arrJurusan[6] = "Desain Komunikasi Visual";
+        $arrJurusan[7] = "Strata-1 Sistem Informasi Bisnis";
+        $arrJurusan[8] = "S2 Teknologi Informasi";
+        $arrJurusan[9] = "Strata-1 Informatika profesional (kelas malam)";
+
+        $arrIndex = [];
+        $arrIndex[0] = "01";
+        $arrIndex[1] = "02";
+        $arrIndex[2] = "10";
+        $arrIndex[3] = "11";
+        $arrIndex[4] = "12";
+        $arrIndex[5] = "14";
+        $arrIndex[6] = "17";
+        $arrIndex[7] = "18";
+        $arrIndex[8] = "21";
+        $arrIndex[9] = "31";
     }
     
 
@@ -103,44 +119,35 @@
                 <input class='text-input' id='place' name='place' required type='text' value="<?=$listAcara['tempat']?>">
               </p>
               <p class='field half required'>
-                <label class='label' for='linkPage'>Link Halaman</label>
+                <label class='label' for='linkPage'>Tag Halaman</label>
                 <input class='text-input' id='linkPage' name='linkPage' required type='text' value="<?=$listAcara['link_halaman'] ?>">
               </p>
               <p class='field half'>
                 <label class='label' for='kategori'>Kategori</label>
                 <select class="select" name="kategori" id="kategori">
-                    <?php
-                        foreach ($arrJurusan as $key => $value) {
-                            if($value == $listAcara['kategori']){
-                                ?>
-                                    <option value="<?=$value?>" selected><?=$value?></option>
-                                <?php
-                            }
-                            else{
-                                ?>
-                                    <option value="<?=$value?>"><?=$value?></option>
-                                <?php
-                            }
-                        }
-                    ?>
+                    <option value="1">Berita</option>
+                    <option value="2">Agenda</option>
+                    <option value="3">Media</option>
                 </select>
               </p>
               <p class='field'>
                 <label class='label' for='jurusan'>Acara Jurusan</label>
                 <select class="select" name="jurusan" id="jurusan">
-                    <?php
-                        foreach ($arrJurusan as $key => $value) {
-                            if($value == $listAcara['jurusan']){
-                                ?>
-                                    <option value="<?=$value?>" selected><?=$value?></option>
-                                <?php
-                            }
-                            else{
-                                ?>
-                                    <option value="<?=$value?>"><?=$value?></option>
-                                <?php
-                            }
-                        }
+                <?php
+                      $ctr = 0;
+                      foreach ($arrIndex as $key => $value) {
+                          if($value == $listAcara['jurusan']){
+                              ?>
+                                  <option value="<?=$value?>" selected><?=$arrJurusan[$ctr]?></option>
+                              <?php
+                          }
+                          else{
+                              ?>
+                                  <option value="<?=$value?>"><?=$arrJurusan[$ctr]?></option>
+                              <?php
+                          }
+                          $ctr++;
+                      }
                     ?>
                 </select>
               </p>
