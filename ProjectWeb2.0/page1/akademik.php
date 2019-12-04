@@ -85,16 +85,13 @@
         <div class="kiri-atas">AKADEMI</div>
         <div>
         
+        <h5 style="text-align:center">DIPLOMA 3</h5>
         <div class='deli'>
-        <h5>DIPLOMA 3</h5>
             <span onclick='panggilAkademik(1)'>D3 Sistem Informasi</span>
         </div>
         <br>
-        <div class="deli">
-            <h5>STRATA 1</h5>
-        </div>
+            <h5 style="text-align:center">STRATA 1</h5>
         <?php
-        
             include("connection.php");
             $jurusan=mysqli_query($connStts,"SELECT * from jurusan_bahasa where jurusan_id<>2 AND jurusan_id<>1 order by jurusan_id asc ");
             foreach ($jurusan as $key => $value) {
@@ -106,8 +103,8 @@
             }
 
         ?><br>
-        
-        <div class='deli'><h5>Program Internasional</h5>
+        <h5 tyle="text-align:center">Program Internasional</h5>
+        <div class='deli'>
             <span onclick='panggilAkademik(2)'>Bachelor of Information Technology</span> 
         </div><br>
 
@@ -137,7 +134,7 @@
     $(".akademik").addClass("active");
     $(".akademik").addClass("text-white");
     $(".akademik").removeClass("text-dark");
-    panggilAkademik(14);
+    panggilAkademik(1);
     function panggilAkademik(index){
         $("#hidden").val(index);
         $.ajax({
@@ -147,6 +144,8 @@
                 id:index
             },
             success: function (data) {
+        $(".detail1").addClass("aktif");
+        $(".detail2").removeClass("aktif");
                 $(".content").html(data);
             }
         });
