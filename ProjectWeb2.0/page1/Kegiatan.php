@@ -28,8 +28,7 @@
                 </div>
             </div>
             </div>
-
-        </div>
+        </div><br><br><br>
         <div class="row" id="HIMPUNAN MAHASISWA">
             <div class="panel panel-default">
                 <div class="panel-body">
