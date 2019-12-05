@@ -44,6 +44,7 @@
     <?php 
         include("connection.php");
         $orang=mysqli_query($conn,"SELECT * from dosen");
+        
     ?>
     <div class="Mid">
         <?php
@@ -53,7 +54,7 @@
                     <img src='$value[gambar]' class='DosenImg'>
                     <div class='DosenText'>
                         <span style='font-size:13px'>$value[nama]</span><br>
-                        <span style='font-size:15px'>$value[jabatan]</span><br>
+                        <span style='font-size:15px'>".$value["jabatan_".$bahasa]."</span><br>
                         <span style='font-size:10px'>$value[email]</span>
                     </div>
                 </div>

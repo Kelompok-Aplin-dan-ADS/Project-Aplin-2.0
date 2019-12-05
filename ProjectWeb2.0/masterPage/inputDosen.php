@@ -40,6 +40,8 @@
         <li><a href="pageDosenUpdate.php">Update Dosen</li>
         <li><a href="inputMatkul.php">Insert Mata Kuliah</a></li>
         <li><a href="pageUpdateMatkul.php">Update Mata Kuliah</a></li>
+        <li><a href="tag/insertTag.php">Insert Tag</a></li>
+        <li><a href="index.php" name="logout">Logout</a></li>
       </ul>
     </div>
     

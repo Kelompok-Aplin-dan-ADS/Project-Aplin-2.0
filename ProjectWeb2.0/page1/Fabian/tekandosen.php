@@ -3,6 +3,8 @@
     include_once("..//connection.php");
     $id=$_POST["id"];
     $dosenTampil=mysqli_fetch_assoc(mysqli_query($conn,"SELECT * from dosen where nip=$id"));
+    session_start();
+    $bahasa=$_SESSION["bahasa"];
 ?>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -14,7 +16,7 @@
             </button>
         </div>
         <div class="modal-body">
-            <span class="font-15"><?=$dosenTampil["jabatan"]?></span><br>
+            <span class="font-15"><?=$dosenTampil["jabatan_".$bahasa]?></span><br>
             <span class="font-15"><?=$dosenTampil["email"]?></span><br>
             <span class="font-15 font-italic"><?=$dosenTampil["quotes"]?></span><br>
         </div>

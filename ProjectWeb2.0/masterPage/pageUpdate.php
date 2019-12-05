@@ -15,16 +15,18 @@
 <body>
     <div id="wrapper">
 	    <!-- Sidebar -->
-	    <div id="sidebar-wrapper">
-	      <ul class="sidebar-nav">
-		  	<li><a href="index2.php">Insert Event</a> </li>
-	        <li><a href="pageUpdate.php">Update Event</a> </li>
-	        <li><a href="inputDosen.php">Insert Dosen</a></li>
-	        <li><a href="pageDosenUpdate.php">Update Dosen</li>
-	        <li><a href="inputMatkul.php">Insert Mata Kuliah</a></li>
-	        <li><a href="pageUpdateMatkul.php">Update Mata Kuliah</a></li>
-	      </ul>
-	    </div>
+		<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li><a href="index2.php">Insert Event</a> </li>
+			<li><a href="pageUpdate.php">Update Event</a> </li>
+			<li><a href="inputDosen.php">Insert Dosen</a></li>
+			<li><a href="pageDosenUpdate.php">Update Dosen</li>
+			<li><a href="inputMatkul.php">Insert Mata Kuliah</a></li>
+			<li><a href="pageUpdateMatkul.php">Update Mata Kuliah</a></li>
+			<li><a href="tag/insertTag.php">Insert Tag</a></li>
+			<li><a href="index.php" name="logout">Logout</a></li>
+		</ul>
+		</div>
 	    
 	    <!-- Page Content -->
 	    <div id="page-content-wrapper">

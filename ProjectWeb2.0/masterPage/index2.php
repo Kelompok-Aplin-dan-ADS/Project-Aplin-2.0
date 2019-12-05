@@ -11,7 +11,6 @@
       header("location: ../page1");
     }
     else if(isset($_POST["btnSend"])){
-        
         $fileName = $_FILES['imgFile']['name'];
         $fileTmp = $_FILES['imgFile']['tmp_name'];
         $fileDestination = "./../assets/events/".$fileName;
@@ -20,7 +19,7 @@
         $desc = $_POST['textEvent'];
         $waktu = $_POST['waktuAcara'];
         $tempat = $_POST['place'];
-        $link = "temp link";
+        $link = "";
         $tag="";
         if(!empty($_POST["tag"])){
           foreach ($_POST['tag'] as $key => $value) {
@@ -32,6 +31,9 @@
         $query = "INSERT INTO acara VALUES('','$fileDestination','$judul','$desc','$waktu','$tempat','$link','$tag','$kategori','$jurusan')";
         $conn->query($query);
     }
+
+    $query = "SELECT * FROM tag";
+    $listTag = $conn->query($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,6 +58,7 @@
         <li><a href="pageDosenUpdate.php">Update Dosen</li>
         <li><a href="inputMatkul.php">Insert Mata Kuliah</a></li>
         <li><a href="pageUpdateMatkul.php">Update Mata Kuliah</a></li>
+        <li><a href="tag/insertTag.php">Insert Tag</a></li>
         <li><a href="index.php" name="logout">Logout</a></li>
       </ul>
     </div>
@@ -88,9 +91,14 @@
                 <label class='label' for='place'>Tempat Acara</label>
                 <input class='text-input' id='place' name='place' required type='text'>
               </p>
-              <p class='field half required'>
-                <label class='label' for='linkPage'>Link Halaman</label>
-                <input class='text-input' id='linkPage' name='linkPage' required type='text'>
+              <p class='field half'>
+                <label class='label' for='Tag'>Tag</label>
+                <?php
+                  foreach ($listTag as $key => $value) {
+                    ?><input type="checkbox" name="tag[]" id="tag" value="<?=$value['tag_id']?>"><?=$value['tag_nama_1']?> <br>
+                    <?php
+                  }
+                ?>
               </p>
               <p class='field half'>
                 <label class='label' for='kategori'>Kategori</label>
@@ -100,14 +108,7 @@
                   <option value="3">Media Massa</option>
                 </select>
               </p>
-              <p class='field half required'>
-                <label class='label' for='Tag'>Tag</label>
-                <input type="checkbox" name="tag[]" id="tag" value="1"> Teknologi
-                <input type="checkbox" name="tag[]" id="tag" value="2"> Kesehatan
-                <input type="checkbox" name="tag[]" id="tag" value="3"> Pendidikan
-                <input type="checkbox" name="tag[]" id="tag" value="4"> Keuangan
-                <input type="checkbox" name="tag[]" id="tag" value="5"> Fotografi
-              </p>
+              
               <p class='field'>
                 <label class='label' for='jurusan'>Acara Jurusan</label>
                 <select class='select' name="jurusan" id='jurusan'>
