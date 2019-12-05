@@ -10,11 +10,11 @@
 </head>
 <body>
 	<?php include('fabian/navbar.php') ?>
-        <?php include('fabian/caurousel.php') ?>
-        <?php include('yongki/page1Part2.php') ?>
-		<?php include('media_massa.php') ?>
-        <?php include('samuel/discover-2Ralat.php')?>
-        <?php include('Ming/calJur.php') ?>		
+    <?php include('fabian/caurousel.php') ?>
+    <?php include('yongki/page1Part2.php') ?>
+    <?php include('media_massa.php') ?>
+    <?php include('samuel/discover-2Ralat.php')?>
+    <?php include('Ming/calJur.php') ?>		
 	<?php include('fabian/footer.php') ?>
     <script src="../bootstrap4/js/js.js"></script>
     <script src="../bootstrap4/js/proper.js"></script>

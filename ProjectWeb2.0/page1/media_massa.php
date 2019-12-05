@@ -5,10 +5,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>    
-  <!-- Bootstrap CSS --> 
-  <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
-  <script src="../bootstrap4/js/bootstrap.min.js"></script>  
-  <script src="jquery-3.2.1.min.js"></script> 
   <style> 
     .slider-wrapper { 
       width: 100%; 
@@ -88,7 +84,7 @@ body {
   }
 }
 
-body {  
+.samu {  
   display: flex;
   align-items: center;
   justify-content: center;  
@@ -199,6 +195,8 @@ button {
   <title>Media Massa</title>
 </head>
 <body>
+  <div class="samu">
+    
   <div class="wrap">
     <div class="bg"></div>    
   </div>
@@ -241,6 +239,7 @@ button {
       </div>
     </div>
   </div>  
+  </div>
 </body>
 </html>
   
