@@ -1,6 +1,6 @@
 <?php
-  //require_once("koneksi.php");
-  require_once("connection.php");
+  require_once("koneksi.php");
+  // require_once("connection.php");
 ?>
 <?php
 if ($_POST['mode'] == "media") {
