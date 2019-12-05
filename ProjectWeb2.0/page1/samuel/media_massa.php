@@ -1,6 +1,6 @@
 <?php
-  //require_once("koneksi.php");
-  require_once("connection.php");
+  require_once("koneksi.php");
+  //require_once("connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,7 @@
       position: absolute;
       top: 0;
       left: 0;        
-      /*background: url('back2.jpg') no-repeat center center;*/
+      background: url('back2.jpg') no-repeat center center;
       background-size: cover;
       transform: scale(1.1);
     }
@@ -192,6 +192,8 @@ button {
   transition: opacity 0.4s;
 }
 </style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="jquery.js"></script>
   <title>Media Massa</title>
 </head>
 <body>
