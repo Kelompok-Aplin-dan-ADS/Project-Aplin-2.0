@@ -1,3 +1,17 @@
+<?php
+	require_once("koneksi.php");
+?>
+<?php  
+	if (isset($_REQUEST['id'])) {
+		$catchId = $_REQUEST['id'];			
+		$flag=0;
+		echo $catchId."<br>";			
+		$query = mysqli_query($conn, "SELECT * FROM acara WHERE id_acara='$catchId'");
+		while ($row = mysqli_fetch_array($query)) {	
+			echo $row['deskripsi'];
+		}		
+	}	
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +25,8 @@
 	<title>Halaman Detail</title>
 </head>
 <body>
-	
+	<?php  
+
+	?>
 </body>
 </html>
