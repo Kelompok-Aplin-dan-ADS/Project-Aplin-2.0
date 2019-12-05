@@ -4,7 +4,11 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>      
+<head>    
+  <!-- Bootstrap CSS --> 
+  <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
+  <script src="../bootstrap4/js/bootstrap.min.js"></script>  
+  <script src="jquery-3.2.1.min.js"></script> 
   <style> 
     .slider-wrapper { 
       width: 100%; 
@@ -17,7 +21,7 @@
       position: absolute;
       top: 0;
       left: 0;        
-      /*background: url('back2.jpg') no-repeat center center;*/
+      background: url('back2.jpg') no-repeat center center;
       background-size: cover;
       transform: scale(1.1);
     }
