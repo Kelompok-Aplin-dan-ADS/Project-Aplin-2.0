@@ -58,8 +58,7 @@
   <script>
     function pilihacara(ind){          
       $.post("ajax_media.php",{mode: "media",t1: ind},
-              function(result){    
-                alert(result);
+              function(result){                    
                 $("#content-berita-agenda").html(result);
               }
       );
