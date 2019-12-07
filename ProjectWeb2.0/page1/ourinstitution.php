@@ -7,6 +7,7 @@
     <title>ISTTS</title>
     <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
     <link rel="stylesheet" href="aos.css">
+    <link rel="stylesheet" href="style-Ming.css">
 </head>
 <body>
 	<?php include('fabian/navbar.php') ?>
