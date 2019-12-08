@@ -1,5 +1,13 @@
 <?php
-	require_once("connection.php");
+	require_once("connection.php");	
+	session_start();	
+	$bahasa=1;
+    if(isset($_SESSION["bahasa"])){
+        $bahasa=$_SESSION["bahasa"];
+    }else{
+        $_SESSION["bahasa"]=1;
+    }
+    echo $bahasa;
 ?>
 <?php
 if ($_POST['mode'] == "media") {
@@ -14,14 +22,14 @@ $query3 = mysqli_query($conn, "SELECT * FROM acara WHERE NOT id_acara = $t1 AND 
 				echo "<div class='col-md-6' style='float:left;'>";
 				while ($row = mysqli_fetch_array($query1)) {
 					echo "<div id='foto'><img src='".$row['gambar']."' style='background-size: 100% 100%;' class='card-img-top h-100' alt='error'></div>";
-					echo "<div id='isi'><a href='DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul']."</a></div>";
-					echo "<div id='content'>".substr($row['deskripsi'],0,370)."</div>";
+					echo "<div id='isi'><a href='DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul_'.$bahasa]."</a></div>";
+					echo "<div id='content'>".substr($row['deskripsi_'.$bahasa],0,370)."</div>";
 				}
 				echo "</div>";
 
 				echo "<div class='col-md-6' style='float:left;'>";
 				while ($row = mysqli_fetch_array($query3)) {
-					echo "<div id='isi'><a href='DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul']."</a></div>";
+					echo "<div id='isi'><a href='DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul_'.$bahasa]."</a></div>";
 				}
 				echo "</div>";
 			
@@ -31,7 +39,7 @@ $query3 = mysqli_query($conn, "SELECT * FROM acara WHERE NOT id_acara = $t1 AND 
 		$query2 = mysqli_query($conn, "SELECT * FROM acara WHERE kategori='$t1'");
 		echo "<div class='col-md-6'>";
 		while ($row = mysqli_fetch_array($query2)) {
-			echo "<div id='isi'><a href='DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul']."</a></div>";
+			echo "<div id='isi'><a href='DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul_'.$bahasa]."</a></div>";
 		}
 		echo "</div>";
 	}

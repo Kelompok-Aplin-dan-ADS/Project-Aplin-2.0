@@ -1,7 +1,18 @@
 <?php
   //require_once("koneksi.php");
-  require_once("connection.php");
+  require_once("connection.php");  
+  session_start();
 ?>        
+<?php    
+  $bahasa = 1;
+  if (isset($_SESSION['bahasa'])) {
+    $bahasa = $_SESSION['bahasa'];
+  }
+  else{
+    $bahasa = 1; 
+  }
+?>
+
 <style>
   #bagian-media-massa{
     border: 1px solid black;
@@ -44,23 +55,22 @@
         <div id="content-media">
           <h1>MEDIA MASSA</h1>
           <?php
-            $query = mysqli_query($conn, "SELECT acara.id_acara, acara.judul , acara.deskripsi , acara.kategori , acara.jurusan FROM acara WHERE kategori ='2'");
+            $query = mysqli_query($conn, "SELECT * FROM acara WHERE kategori ='2'");
             while ($row = mysqli_fetch_array($query)) {
               echo "<div id='isi'>
-                <a href='detailberita.php?id=" . $row['id_acara'] . "'>".$row['judul']."</a><p>".substr($row['deskripsi'],0,32)."</p></div>";            
+  <a href='DetailKegiatan.php?acara=".$row['id_acara']."'>".$row['judul_'.$bahasa]."</a><p>".substr($row['deskripsi_'.$bahasa],0,32)."</p></div>";            
             }
           ?>
         </div>
       </div>
-
     </div>          
   </div> 
   <script>
     function pilihacara(ind){          
       $.post("ajax_media.php",{mode: "media",t1: ind},
-              function(result){                    
-                $("#content-berita-agenda").html(result);
-              }
+        function(result){                    
+          $("#content-berita-agenda").html(result);
+        }
       );
     }
   </script>  
