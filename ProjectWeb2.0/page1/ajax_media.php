@@ -6,8 +6,7 @@
         $bahasa=$_SESSION["bahasa"];
     }else{
         $_SESSION["bahasa"]=1;
-    }
-    echo $bahasa;
+    }    
 ?>
 <?php
 if ($_POST['mode'] == "media") {
