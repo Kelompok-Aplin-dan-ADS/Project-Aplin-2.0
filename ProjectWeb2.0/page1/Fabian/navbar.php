@@ -18,7 +18,7 @@
             </form>
         </li>
         <?php
-            include_once("connection.php");
+            require_once("connection.php");
             $bahasa=1;
             if(isset($_SESSION["bahasa"])){
                 $bahasa=$_SESSION["bahasa"];
