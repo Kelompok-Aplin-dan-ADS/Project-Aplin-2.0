@@ -17,7 +17,7 @@
     height: 99vh;
     width: 100%;
     position: relative;
-    margin-top: 6%;        
+    margin-top: 10%;        
   }  
   * {   
    font-family: sans-serif;
@@ -26,9 +26,9 @@
     position: relative;
     margin-top: 1%;
     width: 100%;
-    height: 97vh;
+    height: 80vh;
     border-radius: 3%;
-    z-index: 5;        
+    z-index: 5;            
   }
   </style>  
   <div class="container">
@@ -37,11 +37,11 @@
       <div class="col-md-8">
         <div class="container" id="bagian-berita">
           <ul class="nav nav-tabs">
-            <li class="nav-item">
+            <li class="nav-item" class="tekan">
               <a class="nav-link active" onclick="pilihacara(1)"><p>Berita</p></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link my-2 my-sm-0" onclick="pilihacara(2)"><p>Agenda</p></a>
+            <li class="nav-item" class="tekan">
+              <a class="nav-link" onclick="pilihacara(2)"><p>Agenda</p></a>
             </li>          
           </ul>       
           <div id="content-berita-agenda"></div>   
@@ -62,11 +62,16 @@
     </div>    
   </div>    
   </div>
-  <script>
+  <script>    
+    // $(document).ready(function(){
+    //   $(".tekan").show("slow",1000 , function(){
+    //     pilihacara(ind);
+    //   });
+    // });
     function pilihacara(ind){    
       $.post("ajax_media.php",{mode: "media",t1: ind},
-        function(result){                    
-          $("#content-berita-agenda").html(result);
+        function(result){                                
+          $("#content-berita-agenda").html(result);          
         }
       );
     }    
