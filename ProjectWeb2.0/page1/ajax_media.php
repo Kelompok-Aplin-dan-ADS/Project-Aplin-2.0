@@ -28,7 +28,7 @@ $query3 = mysqli_query($conn, "SELECT * FROM acara WHERE NOT id_acara = $t1 AND 
 
 				echo "<div class='col-md-6' style='float:left;'>";
 				while ($row = mysqli_fetch_array($query3)) {
-					echo "<div id='isi'><a href='DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul_'.$bahasa]."</a></div>";
+					echo "<div id='isi'><a href='Fabian/DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul_'.$bahasa]."</a></div>";
 				}
 				echo "</div>";
 			

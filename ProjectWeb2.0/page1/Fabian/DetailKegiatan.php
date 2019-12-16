@@ -1,8 +1,24 @@
 <?php
 include_once("..//connection.php");
 $id = 5;
-$semuaAcara = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from acara where id_acara=$id"));
-
+//$semuaAcara = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from acara where id_acara=$id"));
+?>
+<?php	    
+    $id=$_GET["acara"];
+    $semuaAcara=mysqli_fetch_assoc(mysqli_query($conn,"SELECT * from acara where id_acara=$id"));
+    $query_tag =mysqli_fetch_array(mysqli_query($conn,"SELECT acara.tag FROM acara WHERE id_acara='$id'"));        
+    $splittag = explode("|",$query_tag["tag"]); 
+    $query_nama_tag = mysqli_query($conn, "SELECT * FROM tag");    
+?>
+<?php  
+    session_start();
+    $bahasa = 1;
+    if (isset($_SESSION['bahasa'])) {
+        $bahasa = $_SESSION['bahasa'];
+    }
+    else{
+        $bahasa = 1; 
+    }
 ?>
 <style>
     body {
@@ -366,7 +382,6 @@ $semuaAcara = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from acara where 
         height: 500px;
     }
 </style>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -389,8 +404,10 @@ $semuaAcara = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from acara where 
     </div>
     <img id="gambar" src=".<?= $semuaAcara["gambar"] ?>" alt="">
     <div id="Kotak">
-        <div><?php echo $semuaAcara["tempat"] . " " . $semuaAcara["waktu"] ?></div>
-        <div><?php echo $semuaAcara["deskripsi"] ?></div>
+        <div><?php echo $semuaAcara["tempat"]." ".$semuaAcara["waktu"]?></div>
+		<div><?php echo $semuaAcara["judul_".$bahasa]?></div>
+		<div><?php echo $semuaAcara["deskripsi_".$bahasa]?></div>
+	</div>
     </div>
 
 </body>
