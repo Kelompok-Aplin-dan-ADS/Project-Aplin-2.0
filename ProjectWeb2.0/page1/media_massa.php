@@ -1,7 +1,7 @@
 <?php
   //require_once("koneksi.php");
   require_once("connection.php");  
-  session_start();
+  // session_start();
 ?>        
 <?php    
   $bahasa = 1;
@@ -65,7 +65,7 @@
     /*padding-bottom: 10px;*/
   }
   </style>  
-  <div class="container">
+  <div class="container" style="clear:both">
   <div class="col-md-12" id="bagian-media-massa" >
     <div class="row">   
       <div class="col-md-8">
