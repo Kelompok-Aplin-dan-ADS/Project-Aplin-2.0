@@ -1,7 +1,7 @@
-
 </section>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="aos.css">
 </head>
+
 <body>
 <header class="main-header">
     <h1><span>Sejarah</span></h1>
@@ -219,12 +220,27 @@
         </div>
     </section>
 </main>
+    <?php include_once("connection.php")?>
+    <header class="main-header">
+        <h1><span>History</span></h1>
+        <p>Known our beloved Campus</p>
+    </header>
+    <main class="container">
+        <?php
+            $sql = "SELECT * from history";
+            $result = $conn->query($sql);
+            while($row = $result->fetch_assoc()) {
+                echo $row["isi"];
+            }
+        ?>
+    </main>
     <script src="aos.js"></script>
     <script>
         AOS.init({
-            offset:400,
-            duration:1000
+            offset: 400,
+            duration: 1000
         });
     </script>
 </body>
+
 </html>

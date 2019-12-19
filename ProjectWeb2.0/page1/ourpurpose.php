@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ISTTS</title>
     <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-Ming.css">
     <link rel="stylesheet" href="aos.css">
 </head>
 <body>

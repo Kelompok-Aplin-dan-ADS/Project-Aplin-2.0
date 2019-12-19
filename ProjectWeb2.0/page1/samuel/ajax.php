@@ -1,4 +1,14 @@
 <?php  
+	session_start();
+  	$bahasa = 1;
+  	if (isset($_SESSION['bahasa'])) {
+    	$bahasa = $_SESSION['bahasa'];
+  	}
+  	else{
+    	$bahasa = 1; 
+ 	}
+?>
+<?php  
 	require_once("koneksi.php");
 ?>
 <?php  
@@ -20,8 +30,8 @@
 			                echo "</div>";
 			                echo "<div class='col-md-7'>";
 			                    echo "<div class='card-body'>";
-									echo "<span class='card-title text-primary'>".$row['judul']."</span>";
-			                        echo "<p class='card-text'>".substr($row['deskripsi'],0,60)."</p>";
+									echo "<span class='card-title text-primary'>".$row['judul_'.$bahasa]."</span>";
+			                        echo "<p class='card-text'>".substr($row['deskripsi_'.$bahasa],0,60)."</p>";
 			                        echo "<a href='card-link'>-READ MORE</a>";
 			                    echo "</div>";
 			                echo "</div>";
