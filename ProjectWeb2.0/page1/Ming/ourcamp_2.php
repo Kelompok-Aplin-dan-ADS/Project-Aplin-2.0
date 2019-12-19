@@ -15,7 +15,7 @@
     <h1><span>History</span></h1>
     <p>Known our beloved Campus</p>
 </header>
-<main class="container">
+<main class="container bagian-kowe">
     <section class="card">
         <div style="font-size:50pt; color:brown; text-align:center;padding-top:120px;">1979</div>
         <div>
