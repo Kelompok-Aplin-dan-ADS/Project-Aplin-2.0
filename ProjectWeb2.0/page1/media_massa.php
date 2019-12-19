@@ -91,7 +91,7 @@
   </div>    
   </div>
   <script>        
-  pilihacara(1);
+    pilihacara(1);
     function pilihacara(ind){    
       $.post("ajax_media.php",{mode: "media",t1: ind},
         function(result){                                
