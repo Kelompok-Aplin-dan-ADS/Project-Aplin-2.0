@@ -12,8 +12,8 @@
 </head>
 <body>
 <header class="main-header">
-    <h1><span>History</span></h1>
-    <p>Known our beloved Campus</p>
+    <h1><span>Sejarah</span></h1>
+    <p>kenal Kampus kita tercinta</p>
 </header>
 <main class="container">
     <section class="card">

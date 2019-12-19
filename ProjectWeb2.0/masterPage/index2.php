@@ -48,6 +48,29 @@
 <body>
 <!-- partial:index.partial.html -->
 <body>
+  <style type="text/css">
+    .buttonIng{
+        display: inline-block;
+        padding: 0.46em 1.6em;
+        border: 0.1em solid #000000;
+        margin: 0 0.2em 0.2em 0;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Roboto',sans-serif;
+        font-weight: 300;
+        color: #000000;
+        text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+        background-color: #42cc8c;
+        text-align: center;
+        transition: all 0.15s;
+    }
+    .buttonIng:hover{
+        text-shadow: 0 0 2em rgba(255,255,255,1);
+        color:#FFFFFF;
+        border-color:#FFFFFF;
+    }
+  </style>
   <div id="wrapper">
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
@@ -71,8 +94,12 @@
             <a href="#" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
             <form action="#" method="post" class="form" enctype="multipart/form-data">
               <label class='label required' for='title' style="font-size: 30pt;">Halaman Masukan Acara Baru</label>
-              <p class='field required'>
+              <p class='field required half'>
                 <label class='label required' for='judul'>Judul Acara</label>
+                <input class='text-input' id='name' name='judul' placeholder="Co: Pekan Kampus" required>
+              </p>
+              <p class='field half'>
+                <label class='label' for='judul'>Event Title[Inggris]</label>
                 <input class='text-input' id='name' name='judul' placeholder="Co: Pekan Kampus">
               </p>
               <p class='field'>
@@ -80,7 +107,11 @@
                 <input class='file-input' id='name' name='imgFile' type='file'>
               </p>
               <p class='field required'>
-                <label class='label' for='textEvent'>Deskripsi  Acara: </label>
+                <label class='label' for='textEvent'>Deskripsi  Acara </label>
+                <textarea class='textarea' cols='50' id='about' name='textEvent' rows='4'></textarea>
+              </p>
+              <p class='field'>
+                <label class='label' for='textEvent'>Event Description[Inggris] </label>
                 <textarea class='textarea' cols='50' id='about' name='textEvent' rows='4'></textarea>
               </p>
               <p class='field required'>
@@ -183,5 +214,8 @@
     $(document).ready(function () {
         $("#sideBar").removeClass("active");
         $(".insertEvent").addClass("active");
+        $(".buttonIng").click(function(){
+          $( ".formIng" ).toggle();
+        });
     });
 </script>

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="aos.css">
 </head>
 <body>
-<header class="main-header">
+<header class="main-header" style="margin-left: 42%;">
     <h1><span>Who</span>,<span>What</span>,<span>Why</span>?</h1>
     <p>Known our beloved Campus<br>
         Our Vision and Mission

@@ -8,9 +8,14 @@
     <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
     <link rel="stylesheet" href="aos.css">
 </head>
+<style type="text/css">
+    .imgs{
+        width: 100%;
+    }
+</style>
 <body>
 	<?php include('fabian/navbar.php') ?>
-    <?php include('ming/ourinstitution.php') ?>
+    <?php include('ming/ourinstitution_'.$bahasa.'.php') ?>
 	<?php include('fabian/footer.php') ?>
     <script src="../bootstrap4/js/js.js"></script>
     <script src="../bootstrap4/js/proper.js"></script>
