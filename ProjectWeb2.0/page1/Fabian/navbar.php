@@ -1,6 +1,12 @@
 <?php
     session_start();  
 ?>
+<style>
+    #nav:hover
+    {
+        color: white;
+    }
+</style>
 <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
 <link rel="stylesheet" href="Fabian/fab.css">
     <ul class="bg-stts nav nav-pills navbar-light" >
@@ -35,11 +41,13 @@
             $akademik=$akademik["nama_".$bahasa];
             $dosen=$dosen["nama_".$bahasa];
             $about=$about["nama_".$bahasa];
+            
+
             echo"
                 <li class='nav-item tengah '>
                     <a class='nav-link text-dark tentang' href='index.php'>$home</a>
                 </li>
-                <li class='nav-item tengah '>
+                <li class='nav-item tengah '  id='nav'>
                     <a class='nav-link text-dark kegiatan' href='Kegiatan.php'>$kegiatan</a>
                 </li>
                 <li class='nav-item tengah '>
@@ -51,9 +59,14 @@
                 <li class='nav-item tengah '>
                     <a class='nav-link text-dark about' href='about.php'>$about</a>
                 </li>
-                <li class='nav-item tengah '>
-                    <input type='text' id='search'>
-                    <button onclick='keCari()'>Search</button>
+                
+                <li class='nav-item tengah search'>
+                    <div class='input-group mb-3'>
+                        <input type='text' class='form-control' id='search' placeholder='Search here' aria-label='Search here' aria-describedby='basic-addon2'>
+                        <div class='input-group-append'>
+                            <button class='btn btn-outline-secondary' type='button' onclick='keCari()'>Search</button>
+                        </div>
+                    </div>
                 </li>
             ";
         ?>

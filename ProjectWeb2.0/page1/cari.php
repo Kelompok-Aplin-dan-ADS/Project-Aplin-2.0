@@ -15,8 +15,6 @@
 <input type='text' id='search_tempat'>
 <button onclick='keCari()'>Search</button>
         <div class="row" id="tempat">
-            
-            
         </div>
     </div>
 </section>
