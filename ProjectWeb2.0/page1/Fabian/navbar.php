@@ -51,9 +51,12 @@
                 <li class='nav-item tengah '>
                     <a class='nav-link text-dark about' href='about.php'>$about</a>
                 </li>
+                <li class='nav-item tengah '>
+                    <input type='text' id='search'>
+                    <button onclick='keCari()'>Search</button>
+                </li>
             ";
         ?>
-        
     </ul>
 </div> 
 
@@ -70,5 +73,9 @@
                 location.reload();
             }
         });
+    }
+    function keCari(){
+        var kata=$("#search").val();
+        window.location="cari.php?kata="+kata;
     }
 </script>
