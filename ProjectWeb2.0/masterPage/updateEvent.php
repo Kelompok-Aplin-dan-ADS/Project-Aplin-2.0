@@ -111,6 +111,10 @@
               <label class='label required' for='title' style="font-size: 30pt;">Update Acara</label>
               <p class='field required'>
                 <label class='label required' for='judul'>Judul Acara</label>
+                <input class='text-input' id='name' required name='judul' placeholder="Co: Pekan Kampus" value="<?= $listAcara['judul'] ?>">
+              </p>
+              <p class='field'>
+                <label class='label required' for='judul'>Event Title[Inggris]</label>
                 <input class='text-input' id='name' name='judul' placeholder="Co: Pekan Kampus" value="<?= $listAcara['judul'] ?>">
               </p>
               <p class='field'>
@@ -118,7 +122,11 @@
                 <input class='file-input' id='name' name='imgFile' type='file'>
               </p>
               <p class='field required'>
-                <label class='label' for='textEvent'>Deskripsi  Acara: </label>
+                <label class='label' for='textEvent'>Deskripsi  Acara </label>
+                <textarea class='textarea' cols='50' id='about' name='textEvent' rows='4'><?php echo $listAcara['deskripsi'] ?></textarea>
+              </p>
+              <p class='field'>
+                <label class='label' for='textEvent'>Event Description[Inggris] </label>
                 <textarea class='textarea' cols='50' id='about' name='textEvent' rows='4'><?php echo $listAcara['deskripsi'] ?></textarea>
               </p>
               <p class='field required'>

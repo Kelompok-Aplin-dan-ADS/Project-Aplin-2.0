@@ -45,7 +45,7 @@
     <nav class="main-menu">
         <ul>
             <li><a href="#page1_yong">Home</a></li>
-            <li><a href="about.html">about us</a></li>
+            <li><a href="about.php">about us</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="blog.html">Blog</a></li>

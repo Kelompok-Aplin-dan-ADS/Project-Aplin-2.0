@@ -11,7 +11,7 @@
 </head>
 <body>
 	<?php include('fabian/navbar.php') ?>
-    <?php include('ming/ourpurpose.php') ?>
+    <?php include('ming/ourpurpose_'.$bahasa.'.php') ?>
 	<?php include('fabian/footer.php') ?>
     <script src="../bootstrap4/js/js.js"></script>
     <script src="../bootstrap4/js/proper.js"></script>
