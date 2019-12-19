@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="fabian/search/css/main.css">
 <?php
     include("fabian/navbar.php");
-    
 ?>
 
 
@@ -25,6 +24,8 @@
 include("../footer.php");
 ?>
 <script src="../bootstrap4/js/js.js"></script>
+<script src="../bootstrap4/js/proper.js"></script>
+<script src="../bootstrap4/js/bootstrap.min.js"></script>
 <script>
     var kata="<?php echo $kata?>";
     $("#search_tempat").val(kata);
