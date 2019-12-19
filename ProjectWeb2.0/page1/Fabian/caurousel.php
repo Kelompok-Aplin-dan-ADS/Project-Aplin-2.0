@@ -24,6 +24,12 @@
         $acara[$i]=$tamp[$ran];
         array_splice($tamp,$ran,1);
     }
+    $bahasa=1;
+    if(isset($_SESSION["bahasa"])){
+        $bahasa=$_SESSION["bahasa"];
+    }else{
+        $_SESSION["bahasa"]=1;
+    }
 ?>
 <!-- Header section start -->
 <img src="../assets/logo-stts.png" class="logo-stts-caur">
@@ -67,11 +73,14 @@
                 <p class="hs-des">We Create Awesome <br>Photographies and more</p>
             </div>
         </div> -->
+        <!-- href='DetailKegiatan.php?acara=$value[id_acara] -->
         <?php
             foreach ($acara as $key => $value) {
-                echo "<div class='hs-item set-bg sp-pad' data-setbg=$value[gambar]>
+                echo "<div class='hs-item set-bg sp-pad' data-setbg=$value[gambar] '>
                 <div class='hs-text'>
-                    <h2 class='hs-title'>$value[judul]</h2>
+                    <h2 class='hs-title'> ";
+                    $judul=$value["judul_$bahasa"];
+                    echo "$judul</h2>
                 </div>
             </div>";
             }

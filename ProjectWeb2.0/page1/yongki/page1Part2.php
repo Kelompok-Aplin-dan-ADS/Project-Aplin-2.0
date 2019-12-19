@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <span class="card-title text-primary"><?=$tampilCard[0]["judul"]?></span>
                         <p class="card-text"><?=$tampilCard[0]["desc"]?></p>
-                        <a href="card-link">-READ MORE</a>
+                        <a href="fabian/DetailKegiatan.php?acara=<?=$tampilCard[0]["id"]?>">-READ MORE</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     <div class="card-body">
                         <span class="card-title text-primary"><?=$tampilCard[3]["judul"]?></span>
                         <p class="card-text"><?=$tampilCard[3]["desc"]?></p>
-                        <a href="card-link">-READ MORE</a>
+                        <a href="fabian/DetailKegiatan.php?acara=<?=$tampilCard[3]["id"]?>">-READ MORE</a>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                     <div class="card-body">
                         <span class="card-title text-primary"><?=$tampilCard[4]["judul"]?></span>
                         <p class="card-text"><?=$tampilCard[4]["desc"]?></p>
-                        <a href="card-link">-READ MORE</a>
+                        <a href="fabian/DetailKegiatan.php?acara=<?=$tampilCard[4]["id"]?>">-READ MORE</a>
                     </div>
                 </div>
             </div>
