@@ -25,7 +25,7 @@
 				echo "<div class='col-md-6'>";
 					echo "<div class='card hoverCard' style='max-width:450px;'>";
 						echo "<div class='row no-gutters'>";
-							echo "<div class='col-md-4' style='border: 3px solid black; width:100%; height:35vh;'>";
+							echo "<div class='col-md-4' style='border: 3px solid black; width:100%; height:30vh;'>";
 			                    echo "<img src='".$row['gambar']."' style='background-size: 100% 100%;' class='card-img-top h-100' alt='error'>";
 			                echo "</div>";
 			                echo "<div class='col-md-7'>";

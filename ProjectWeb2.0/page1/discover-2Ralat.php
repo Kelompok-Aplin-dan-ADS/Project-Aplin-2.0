@@ -38,7 +38,7 @@
 	</style>
 </head>
 <body>
-	<div class="container" style="clear:both">
+	<div class="container" style="clear:both;">
 		<div class="row">
 			<div class="col-md-2">
 				<p id="judul">DISCOVER</p>
@@ -64,10 +64,10 @@
                   <a class="nav-links" id="17" onclick="movePage1(17)" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Desain komunikasi Visual</a>
                 </div> 
 			</div>
-		<!-- ---------------->
-			<div id="bagian-1" class="col-md-8">
-			</div>				
+		<!-- ---------------->						
 		</div>		
+		<div id="bagian-1">
+		</div>	
 	</div>				
 	<!-- ---------------->
 </body>
