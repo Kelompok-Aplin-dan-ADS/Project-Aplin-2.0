@@ -5,19 +5,31 @@
         $fileName = $_FILES['imgFile']['name'];
         $fileTmp = $_FILES['imgFile']['tmp_name'];
         $fileDestination = "..//assets//images//".$fileName;
-        move_uploaded_file($fileTmp,$fileDestination);
-        $nama = $_POST['nama'];
-        $email = $_POST['email'];
-        $jabatan = $_POST['jabatan'];
-        $quotes = $_POST['quotes'];
 
-        $query = "SELECT * FROM dosen";
-        $jum = $conn->query($query);
-        $jum2 =  $jum->num_rows;
-        $jum2++;
+        $fileCheck = explode('.',$fileName);
+        $fileActualExt = strtolower(end($fileCheck));
 
-        $query = "INSERT INTO dosen VALUES('$jum2','$nama','$email','$jabatan','$fileDestination','$quotes')";
-        $conn->query($query);
+        $arrAllow = array('jpg','png');
+
+        if(in_array($fileActualExt,$arrAllow)){
+          move_uploaded_file($fileTmp,$fileDestination);
+          $nama = $_POST['nama'];
+          $email = $_POST['email'];
+          $jabatan = $_POST['jabatan'];
+          $quotes = $_POST['quotes'];
+
+          $query = "SELECT * FROM dosen";
+          $jum = $conn->query($query);
+          $jum2 =  $jum->num_rows;
+          $jum2++;
+
+          $query = "INSERT INTO dosen VALUES('$jum2','$nama','$email','$jabatan','$fileDestination','$quotes')";
+          $conn->query($query);
+        }
+        else{
+          echo "<h1 style='color:white;'>File bukan foto</h1>";
+        }
+        
     }
     
 ?>

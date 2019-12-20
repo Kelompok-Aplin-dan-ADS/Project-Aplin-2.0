@@ -7,7 +7,6 @@
             Pursue Your Passion & Purpose Here<span class="text-primary">.</span>
         </p>
         <span>#STTSIMPACTSLIVES</span> <br> <br>
-
         <div class="card hoverCard rounded" style="max-width: 450px;">
             <div class="row no-gutters">
                 <div class="col-md-4">
@@ -23,20 +22,25 @@
             </div>
         </div>
         <br>
-        <div class="card hoverCard rounded card-gedung">
-            <img src="<?=$tampilCard[1]["gambar"]?>" style="height:400px;z-index:0"alt=""> 
-            <div class="images-wrapper">
-                <div class="card-image "></div>
+        <a a href="fabian/DetailKegiatan.php?acara=<?=$tampilCard[1]["id"]?>">
+            <div class="card hoverCard rounded card-gedung">
+                <img src="<?=$tampilCard[1]["gambar"]?>" style="height:400px;z-index:0"alt=""> 
+                <div class="images-wrapper">
+                    <div class="card-image "></div>
+                </div>
+                <div class="card-content" style="margin-top:-80px; margin-left:25px;z-index:1">
+                    <h5 class="card-subtitle fontSubtitle"><?=$tampilCard[0]["judul"]?></h5>
+                    <h4 class="card-title text-white"><?=$tampilCard[0]["desc"]?></h4>
+                </div>
             </div>
-            <div class="card-content" style="margin-top:-80px; margin-left:25px;z-index:1">
-                <h5 class="card-subtitle fontSubtitle"><?=$tampilCard[0]["judul"]?></h5>
-                <h4 class="card-title text-white"><?=$tampilCard[0]["desc"]?></h4>
-            </div>
-        </div>
+        </a>
+        
     </div>
 
     <div class="col-bootstrap col-md-5" style="float:left; margin-top:100px;">
-        <img src="<?=$tampilCard[2]["gambar"]?>" class="hoverCard" style="width:450px; height:300px; "alt="">
+        <a href="fabian/DetailKegiatan.php?acara=<?=$tampilCard[2]["id"]?>">
+            <img src="<?=$tampilCard[2]["gambar"]?>" class="hoverCard" style="width:450px; height:300px; "alt="">
+        </a>
         <br> <br>
         <div class="card hoverCard" style="max-width: 450px;">
             <div class="row no-gutters card-img-right">

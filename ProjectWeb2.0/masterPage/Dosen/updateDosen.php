@@ -7,15 +7,25 @@
         $fileTmp = $_FILES['imgDesc']['tmp_name'];
         $fileDestination = "../..//assets//images//".$fileName;
         $fileDatabase = "..//assets//images//".$fileName;
-        move_uploaded_file($fileTmp,$fileDestination);
+
+        $fileCheck = explode('.',$fileName);
+        $fileActualExt = strtolower(end($fileCheck));
+
+        $arrAllow = array('jpg','png');
+
+        
         $nama = $_POST['nama'];
         $email = $_POST['email'];
         $jabatan = $_POST['jabatan'];
         $quotes = $_POST['quotes'];
 
         if($fileName != ""){
+          if(in_array($fileActualExt,$arrAllow)){
+            move_uploaded_file($fileTmp,$fileDestination);
             $query = "UPDATE dosen SET nama='$nama',gambar='$fileDatabase',email='$email',jabatan='$jabatan',quotes='$quotes' WHERE nip='$nip'";
             $conn->query($query);
+          }
+            
         }
         else{
             $query = "UPDATE dosen SET nama='$nama',email='$email',jabatan='$jabatan',quotes='$quotes' WHERE nip='$nip'";

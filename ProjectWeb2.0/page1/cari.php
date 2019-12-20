@@ -19,7 +19,7 @@
 </section>
 
 <?php
-include("../footer.php");
+include("fabian/footer.php");
 ?>
 <script src="../bootstrap4/js/js.js"></script>
 <script src="../bootstrap4/js/proper.js"></script>
