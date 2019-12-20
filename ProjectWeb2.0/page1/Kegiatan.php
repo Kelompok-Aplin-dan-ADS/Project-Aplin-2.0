@@ -10,6 +10,7 @@
 <!-- Fonts -->
 <?php 
 include("fabian/navbar.php");
+    $bahasa = $_SESSION['bahasa'];
     $bem=mysqli_fetch_assoc(mysqli_query($connStts,"SELECT * from org_bahasa where org_bahasa_id=1"));
     $judul=mysqli_fetch_assoc(mysqli_query($connStts,"SELECT * from org_bahasa where org_bahasa_id=27"));
     
@@ -38,7 +39,7 @@ include("fabian/navbar.php");
                 <div class="panel-body">
                     <div class="col-md-4" style="float:left">
                     <center>
-                        <img src="../assets/images/bem.jpg" class="img-responsive">
+                        <img src="../assets/images/hima.png" class="img-responsive">
                     </center>
                     </div>
                     <div class="col-md-6" style="float:left">
@@ -56,7 +57,7 @@ include("fabian/navbar.php");
                                         <div class='col-sm-6 col-md-4'>
                                             <div class='mu-team-content-single'>
                                                 <div class='mu-team-profile'>
-                                                    <img src='assets/images/team-member-1.jpg' alt='team member'>
+                                                    <img class='img-responsive' src='".$himpunanMahasiswa["org_foto_deskripsi"]."'' alt='image'>
                                                     <div class='mu-team-social-info'>
                                                         <a href='#'><i class='icon-social-facebook'></i></a>
                                                         <a href='#'><i class='icon-social-twitter'></i></a>
@@ -96,18 +97,21 @@ include("fabian/navbar.php");
 
                                 <?php
                                     for ($i=7; $i < 23; $i++) { 
-                                        $himpunanMahasiswa=mysqli_fetch_assoc(mysqli_query($connStts,"SELECT * from org_bahasa where org_bahasa_id=$i"));
-                                    
-                                        echo"
+                                        if($i!=13&&$i!=16){
+                                            $himpunanMahasiswa=mysqli_fetch_assoc(mysqli_query($connStts,"SELECT * from org_bahasa where org_bahasa_id=$i"));
+                                            echo"
                                             <div class='col-xs-6 col-sm-4 col-md-4 filtr-item' data-category='3'>
-                                            <a class='mu-imglink' href='../assets/images/bem.jpg' title='".$himpunanMahasiswa["org_nama_".$bahasa]."'>
-                                                <img class='img-responsive' src='../assets/images/bem.jpg' alt='image'>
+                                            <a class='mu-imglink' href='".$himpunanMahasiswa["org_foto_deskripsi"]."' title='".$himpunanMahasiswa["org_nama_".$bahasa]."'>
+                                                <img class='img-responsive' src='".$himpunanMahasiswa["org_foto_deskripsi"]."'' alt='image'>
                                                 <div class='mu-filter-item-content'>
                                                     <h4 class='mu-filter-item-title'>".$himpunanMahasiswa["org_nama_".$bahasa]."</h4>
                                                 </div>
                                             </a>
                                             </div>
                                         ";
+                                        }
+                                        
+                                        
                                     }
                                 ?>
                                 
@@ -125,7 +129,7 @@ include("fabian/navbar.php");
             <div class="panel-body">
                 <div class="col-md-3" style="float:left">
                 <center>
-                    <img src="../assets/images/bem.jpg" class="img-responsive">
+                    <img src="../assets/images/ukk.jpg" class="img-responsive">
                 </center>
                 </div>
                 <div class="col-md-6" style="float:left">
@@ -145,7 +149,7 @@ include("fabian/navbar.php");
                                     <div class='col-sm-6 col-md-4'>
                                         <div class='mu-team-content-single'>
                                             <div class='mu-team-profile'>
-                                                <img src='assets/images/team-member-1.jpg' alt='team member'>
+                                                <img class='img-responsive' src='".$himpunanMahasiswa["org_foto_deskripsi"]."'' alt='image'>
                                                 <div class='mu-team-social-info'>
                                                     <a href='#'><i class='icon-social-facebook'></i></a>
                                                     <a href='#'><i class='icon-social-twitter'></i></a>
@@ -197,7 +201,7 @@ include("fabian/navbar.php");
     <script src="../bootstrap4/js/proper.js"></script>
     <script src="../bootstrap4/js/bootstrap.min.js"></script>
     
-<?php include("fabian/footer.php")?>
+<?php include("fabian/footer_".$bahasa.".php")?>
 <script>
         $(".kegiatan").addClass("active");
         $(".kegiatan").addClass("text-white");

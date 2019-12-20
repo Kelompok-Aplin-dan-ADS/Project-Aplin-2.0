@@ -9,28 +9,50 @@
         header("location: pageUpdate.php");
     }
     else if(isset($_POST['btnSend'])){
-        $fileName = $_FILES['imgFile']['name'];
-        $fileTmp = $_FILES['imgFile']['tmp_name'];
-        $fileDestination = "./../assets/events/".$fileName;
-        move_uploaded_file($fileTmp,$fileDestination);
+      $id = $_POST['btnSend'];
+      $fileName = $_FILES['imgFile']['name'];
+      $fileTmp = $_FILES['imgFile']['tmp_name'];
+      $fileDestination = "./../assets/events/".$fileName;
 
-        $id = $_POST['btnSend'];
-        $judul = $_POST['judul'];
-        $desc = $_POST['textEvent'];
-        $waktu = $_POST['waktuAcara'];
-        $tempat = $_POST['place'];
-        $link = $_POST['linkPage'];
-        $tag="";
-        if(!empty($_POST["tag"])){
-          foreach ($_POST['tag'] as $key => $value) {
-            $tag.= $value."|";
-          }
+      $judul = $_POST['judul'];
+      $desc = $_POST['textEvent'];
+      $judul_ing = $_POST['judul_ing'];
+      $desc_ing = $_POST['textEvent_ing'];
+      $waktu = $_POST['waktuAcara'];
+      $tempat = $_POST['place'];
+      $link = "";
+      $tag="";
+      if(!empty($_POST["tag"])){
+        foreach ($_POST['tag'] as $key => $value) {
+          $tag.= $value."|";
         }
-        $kategori = $_POST['kategori'];
-        $jurusan = $_POST['jurusan'];
-        $query = "UPDATE acara SET judul='$judul',gambar='$fileDestination',deskripsi='$desc',waktu='$waktu',tempat='$tempat',link_halaman='$link',tag='$tag',kategori='$kategori',jurusan='$jurusan' WHERE id_acara = '$id'";
+      }
+      $kategori = $_POST['kategori'];
+      $jurusan = $_POST['jurusan'];
+      if($fileName !=""){
+        $fileCheck = explode('.',$fileName);
+        $fileActualExt = strtolower(end($fileCheck));
+
+        $arrAllow = array('jpg','png');
+        
+        if(in_array($fileActualExt,$arrAllow)){
+          move_uploaded_file($fileTmp,$fileDestination);
+          $query = "UPDATE acara SET judul_1='$judul',judul_2='$judul_ing',gambar='$fileDestination',deskripsi_1='$desc',deskripsi_2 ='$desc_ing',waktu='$waktu',tempat='$tempat',link_halaman='$link',tag='$tag',kategori='$kategori',jurusan='$jurusan' WHERE id_acara = '$id'";
+          $conn->query($query);
+          header("location: pageUpdate.php");
+        }
+        else{
+          echo "<h1 style='color:white;'>File bukan foto</h1>";
+          header("location: pageUpdate.php");
+        }
+      }
+      else{
+        $query = "UPDATE acara SET judul_1='$judul',judul_2='$judul_ing',deskripsi_1='$desc',deskripsi_2 ='$desc_ing',waktu='$waktu',tempat='$tempat',link_halaman='$link',tag='$tag',kategori='$kategori',jurusan='$jurusan' WHERE id_acara = '$id'";
+        echo $query;
         $conn->query($query);
         header("location: pageUpdate.php");
+      }
+      
     }
     else{
         $id = $_POST['id'];
@@ -111,11 +133,11 @@
               <label class='label required' for='title' style="font-size: 30pt;">Update Acara</label>
               <p class='field required'>
                 <label class='label required' for='judul'>Judul Acara</label>
-                <input class='text-input' id='name' required name='judul' placeholder="Co: Pekan Kampus" value="<?= $listAcara['judul'] ?>">
+                <input class='text-input' id='name' required name='judul' placeholder="Co: Pekan Kampus" value="<?= $listAcara['judul_1'] ?>">
               </p>
               <p class='field'>
                 <label class='label required' for='judul'>Event Title[Inggris]</label>
-                <input class='text-input' id='name' name='judul' placeholder="Co: Pekan Kampus" value="<?= $listAcara['judul'] ?>">
+                <input class='text-input' id='name' name='judul_ing' placeholder="Co: Pekan Kampus" value="<?= $listAcara['judul_2'] ?>">
               </p>
               <p class='field'>
                 <label class='label required' for='imgFile'>Gambar Acara</label>
@@ -123,11 +145,11 @@
               </p>
               <p class='field required'>
                 <label class='label' for='textEvent'>Deskripsi  Acara </label>
-                <textarea class='textarea' cols='50' id='about' name='textEvent' rows='4'><?php echo $listAcara['deskripsi'] ?></textarea>
+                <textarea class='textarea' cols='50' id='about' name='textEvent' rows='4'><?php echo $listAcara['deskripsi_1'] ?></textarea>
               </p>
               <p class='field'>
                 <label class='label' for='textEvent'>Event Description[Inggris] </label>
-                <textarea class='textarea' cols='50' id='about' name='textEvent' rows='4'><?php echo $listAcara['deskripsi'] ?></textarea>
+                <textarea class='textarea' cols='50' id='about' name='textEvent_ing' rows='4'><?php echo $listAcara['deskripsi_2'] ?></textarea>
               </p>
               <p class='field required'>
                 <label class='label' for='waktuAcara'>Waktu Acara</label>

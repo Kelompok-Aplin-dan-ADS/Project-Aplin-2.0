@@ -1,5 +1,6 @@
 <?php
     require_once("config.php");
+    $bahasa=$_SESSION["bahasa"];
 ?>
 <table border="1">
     <thead>
@@ -15,13 +16,17 @@
             echo "<span class='h4'>5 acara terbaru yang ditambahkan</span>";
             $listAcara = $conn->query($query);
             foreach ($listAcara as $key => $value) {
-                $miniDesc = $value['deskripsi'];
+                $miniDesc = $value['deskripsi_'.$bahasa];
                 $miniDesc = substr($miniDesc,0,25)."...";
+
+                $query = "SELECT * FROM jurusan_bahasa WHERE jurusan_id = '$value[jurusan]'";
+                $temp = $conn2->query($query);
+                $namaJurusan = mysqli_fetch_assoc($temp);
                 ?>
                     <tr>
-                        <td><?=$value['judul']?></td>
+                        <td><?=$value['judul_'.$bahasa]?></td>
                         <td><?=$miniDesc?></td>
-                        <td><?=$value['jurusan']?></td>
+                        <td><?=$namaJurusan['jurusan_nama']?></td>
 
                     </tr>
                 <?php

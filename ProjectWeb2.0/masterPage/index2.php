@@ -14,22 +14,36 @@
         $fileName = $_FILES['imgFile']['name'];
         $fileTmp = $_FILES['imgFile']['tmp_name'];
         $fileDestination = "./../assets/events/".$fileName;
-        move_uploaded_file($fileTmp,$fileDestination);
-        $judul = $_POST['judul'];
-        $desc = $_POST['textEvent'];
-        $waktu = $_POST['waktuAcara'];
-        $tempat = $_POST['place'];
-        $link = "";
-        $tag="";
-        if(!empty($_POST["tag"])){
-          foreach ($_POST['tag'] as $key => $value) {
-            $tag.= $value."|";
+
+        $fileCheck = explode('.',$fileName);
+        $fileActualExt = strtolower(end($fileCheck));
+
+        $arrAllow = array('jpg','png');
+
+        if(in_array($fileActualExt,$arrAllow)){
+          move_uploaded_file($fileTmp,$fileDestination);
+          $judul = $_POST['judul'];
+          $desc = $_POST['textEvent'];
+          $judul_ing = $_POST['judul_ing'];
+          $desc_ing = $_POST['textEvent_ing'];
+          $waktu = $_POST['waktuAcara'];
+          $tempat = $_POST['place'];
+          $link = "";
+          $tag="";
+          if(!empty($_POST["tag"])){
+            foreach ($_POST['tag'] as $key => $value) {
+              $tag.= $value."|";
+            }
           }
+          $kategori = $_POST['kategori'];
+          $jurusan = $_POST['jurusan'];
+          $query = "INSERT INTO acara VALUES('','$fileDestination','$judul','$judul_ing','$desc','$desc_ing','$waktu','$tempat','$link','$tag','$kategori','$jurusan')";
+          $conn->query($query);
         }
-        $kategori = $_POST['kategori'];
-        $jurusan = $_POST['jurusan'];
-        $query = "INSERT INTO acara VALUES('','$fileDestination','$judul','$desc','$waktu','$tempat','$link','$tag','$kategori','$jurusan')";
-        $conn->query($query);
+        else{
+          echo "<h1 style='color:white;'>File bukan foto</h1>";
+        }
+        
     }
 
     $query = "SELECT * FROM tag";
@@ -100,7 +114,7 @@
               </p>
               <p class='field half'>
                 <label class='label' for='judul'>Event Title[Inggris]</label>
-                <input class='text-input' id='name' name='judul' placeholder="Co: Pekan Kampus">
+                <input class='text-input' id='name' name='judul_ing' placeholder="Co: Pekan Kampus">
               </p>
               <p class='field'>
                 <label class='label required' for='imgFile'>Gambar Acara</label>
@@ -112,7 +126,7 @@
               </p>
               <p class='field'>
                 <label class='label' for='textEvent'>Event Description[Inggris] </label>
-                <textarea class='textarea' cols='50' id='about' name='textEvent' rows='4'></textarea>
+                <textarea class='textarea' cols='50' id='about' name='textEvent_ing' rows='4'></textarea>
               </p>
               <p class='field required'>
                 <label class='label' for='waktuAcara'>Waktu Acara</label>
@@ -169,47 +183,9 @@
   
 </body>
 <!-- partial -->
+  <script src="jquery3.4.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
   <script src="scriptTheme.js"></script>
-  <script>
-    $(document).ready(function(){
-  $("#menu-toggle").click(function(e){
-    e.preventDefault();
-    $("#wrapper").toggleClass("menuDisplayed");
-  });
-  (function() {
-  var magicFocus;
-
-  magicFocus = class magicFocus {
-    constructor(parent) {
-      var i, input, len, ref;
-      this.show = this.show.bind(this);
-      this.hide = this.hide.bind(this);
-      this.parent = parent;
-      if (!this.parent) {
-        return;
-      }
-      this.focus = document.createElement('div');
-      this.focus.classList.add('magic-focus');
-      this.parent.classList.add('has-magic-focus');
-      this.parent.appendChild(this.focus);
-      ref = this.parent.querySelectorAll('input, textarea, select');
-      for (i = 0, len = ref.length; i < len; i++) {
-        input = ref[i];
-        input.addEventListener('focus', function() {
-          return window.magicFocus.show();
-        });
-        input.addEventListener('blur', function() {
-          return window.magicFocus.hide();
-        });
-      }
-    }
-
-        </div>
-    </div>
-</body>
-</html>
-<script src="jquery3.4.js"></script>
 <script>
     $(document).ready(function () {
         $("#sideBar").removeClass("active");
