@@ -41,7 +41,7 @@
 	</style>
 </head>
 <body>
-	<div class="container" style="clear:both">
+	<div class="container" id="kegiatan-jurusan" style="clear:both">
 		<div class="row">
 			<div class="col-md-2">
 				<p id="judul">DISCOVER</p>

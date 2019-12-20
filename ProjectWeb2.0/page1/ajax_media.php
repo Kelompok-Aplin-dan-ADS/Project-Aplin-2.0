@@ -9,38 +9,76 @@
     }    
 ?>
 <?php
-if ($_POST['mode'] == "media") {
-	$t1 = $_POST['t1'];
-	if ($t1 == "1") {
-		///// aku lempar ke detailberita.php nah nanti waktu dek file yang itu kalau berita_bahasa_id ne kalau sama yang tak kirim idnya maka muncul kan sesuai 		
-$query1 = mysqli_query($conn, "SELECT * FROM acara WHERE kategori = $t1 AND id_acara = $t1");
-$query3 = mysqli_query($conn, "SELECT * FROM acara WHERE NOT id_acara = $t1 AND kategori =$t1");
-
-		echo "<div class='row'>";
-			echo "<div class='col-md-12'>";
-				echo "<div class='col-md-6' style='float:left;'>";
-				while ($row = mysqli_fetch_array($query1)) {
-					echo "<div id='foto'><img src='".$row['gambar']."' style='background-size: 100% 100%;' class='card-img-top h-100' alt='error'></div>";
-					echo "<div id='isi'><a href='DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul_'.$bahasa]."</a></div>";
-					echo "<div id='content'>".substr($row['deskripsi_'.$bahasa],0,370)."</div>";
-				}
-				echo "</div>";
-
-				echo "<div class='col-md-6' style='float:left;'>";
-				while ($row = mysqli_fetch_array($query3)) {
-					echo "<div id='isi'><a href='Fabian/DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul_'.$bahasa]."</a></div>";
-				}
-				echo "</div>";
-			
-			echo "</div>";
-		echo "</div>";
-	} else if ($t1 == "2") {
-		$query2 = mysqli_query($conn, "SELECT * FROM acara WHERE kategori='$t1'");
-		echo "<div class='col-md-6'>";
-		while ($row = mysqli_fetch_array($query2)) {
-			echo "<div id='isi'><a href='DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul_'.$bahasa]."</a></div>";
-		}
-		echo "</div>";
-	}
+$no = 0;
+if ($_POST['mode'] == "media") {	  		      
+    $query = mysqli_query($conn,"SELECT * FROM acara WHERE id_acara <=6");
+    $no = 0;         
+    echo "<h1 id='judul_berita' style='text-align:center;'>BERITA</h1>";
+    while ($row = mysqli_fetch_array($query)) {                  
+    	if ($no == 0) {
+    		echo "<div class='row'>";
+    	}    	    	
+    	echo "<div class='col-md-4'>";
+        echo "<div class='hovereffect'>";
+          	echo "<img class='img-responsive' src='".$row['gambar']."' alt='error'>";
+          	echo "<div class='overlay'>";
+            	// echo "<h2>".$row['judul_'.$bahasa]."</h2>";
+            	echo "<p>";
+              		echo "<div id='isi'><a href='Fabian/DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul_'.$bahasa]."</a></div>";
+            	echo "</p>";
+          	echo "</div>";
+        echo "</div>";             
+        echo "</div>";
+        $no +=1; 
+        if ($no == 3) {
+        	echo "</div>";
+        	$no = 0;
+        }    	
+    }        
+}
+else if ($_POST['mode'] == "agenda") {
+	$query = mysqli_query($conn,"SELECT * FROM acara WHERE id_acara >= 7 AND id_acara <= 13");
+    $no = 0;         
+    echo "<h1 id='judul_berita' style='text-align:center;'>AGENDA</h1>";
+    while ($row = mysqli_fetch_array($query)) {                  
+    	if ($no == 0) {
+    		echo "<div class='row'>";
+    	}    	    	
+    	echo "<div class='col-md-4'>";
+        echo "<div class='hovereffect'>";
+          	echo "<img class='img-responsive' src='".$row['gambar']."' alt='error'>";
+          	echo "<div class='overlay'>";            	
+            	echo "<p>";
+              		echo "<div id='isi'><a href='Fabian/DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul_'.$bahasa]."</a></div>";
+            	echo "</p>";
+          	echo "</div>";
+        echo "</div>";             
+        echo "</div>";
+        $no +=1; 
+        if ($no == 3) {
+        	echo "</div>";
+        	$no = 0;
+        }    	
+    }        
+}
+else if ($_POST['mode'] == "massa") {
+	$query = mysqli_query($conn,"SELECT * FROM acara WHERE id_acara >= 7 AND id_acara <= 13");
+    $no = 0;         
+    echo "<h1 id='judul_berita' style='text-align:center;'>MEDIA MASSA</h1>";
+    while ($row = mysqli_fetch_array($query)) {                  
+    	if ($no == 0) {
+    		echo "<div class='row'>";
+    	}    	    	
+    	echo "<div class='col-md-4'>";
+    	echo "<p>";
+          	echo "<div id='isi' style='width:100%; height:75%;text-align: center;'><a style='color:black;' href='Fabian/DetailKegiatan.php?acara=".$row['id_acara']."''>".$row['judul_'.$bahasa]."</a></div>";
+        	echo "</p>";          	                   
+        echo "</div>";
+        $no +=1; 
+        if ($no == 3) {
+        	echo "</div>";
+        	$no = 0;
+        }    	
+    }        
 }
 ?>

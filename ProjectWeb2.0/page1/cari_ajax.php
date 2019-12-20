@@ -1,5 +1,6 @@
 <?php
 $conn=mysqli_connect("localhost","root","","project-aplin-2.0");
+session_start();
     $bahasa=1;
     if(isset($_SESSION["bahasa"])){
         $bahasa=$_SESSION["bahasa"];

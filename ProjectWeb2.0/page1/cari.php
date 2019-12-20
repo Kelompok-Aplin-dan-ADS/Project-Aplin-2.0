@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="fabian/search/css/main.css">
 <?php
     include("fabian/navbar.php");
-    
 ?>
 
 
@@ -15,16 +14,16 @@
 <input type='text' id='search_tempat'>
 <button onclick='keCari()'>Search</button>
         <div class="row" id="tempat">
-            
-            
         </div>
     </div>
 </section>
 
 <?php
-include("../footer.php");
+include("fabian/footer.php");
 ?>
 <script src="../bootstrap4/js/js.js"></script>
+<script src="../bootstrap4/js/proper.js"></script>
+<script src="../bootstrap4/js/bootstrap.min.js"></script>
 <script>
     var kata="<?php echo $kata?>";
     $("#search_tempat").val(kata);
