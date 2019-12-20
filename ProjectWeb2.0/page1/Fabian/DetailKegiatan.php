@@ -400,6 +400,16 @@ $id = 5;
                 echo "<span class='letter'>" . substr($text, $i, 1) . "</span>";
             }
             ?>
+			<?php 
+				$index = count($splittag);
+				while ($row = mysqli_fetch_array($query_nama_tag)) {
+					for ($i=0; $i < $index; $i++) { 
+						if ($row['tag_id'] == $splittag[$i]) {                        
+							echo "<button type='button' disabled='false' class='btn btn-primary'>".$row['tag_nama_'.$bahasa]."</button>";
+						}                        
+					}            
+				}
+			?>   
         </div>
     </div>
     <img id="gambar" src=".<?= $semuaAcara["gambar"] ?>" alt="">
