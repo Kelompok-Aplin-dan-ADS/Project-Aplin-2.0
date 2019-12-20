@@ -16,6 +16,7 @@
           $nama = $_POST['nama'];
           $email = $_POST['email'];
           $jabatan = $_POST['jabatan'];
+          $jabatan_ing = $_POST['jabatan_ing'];
           $quotes = $_POST['quotes'];
 
           $query = "SELECT * FROM dosen";
@@ -23,7 +24,7 @@
           $jum2 =  $jum->num_rows;
           $jum2++;
 
-          $query = "INSERT INTO dosen VALUES('$jum2','$nama','$email','$jabatan','$fileDestination','$quotes')";
+          $query = "INSERT INTO dosen VALUES('$jum2','$nama','$email','$jabatan','$jabatan_ing','$fileDestination','$quotes')";
           $conn->query($query);
         }
         else{
@@ -80,6 +81,10 @@
               <p class='field required'>
                 <label class='label' for='jabatan'>Jabatan</label>
                 <input class='text-input' id='jabatan' name='jabatan' required type='text'>
+              </p>
+              <p class='field required'>
+                <label class='label' for='jabatan'>Jabatan [English]</label>
+                <input class='text-input' id='jabatan' name='jabatan_ing' required type='text'>
               </p>
               <p class='field required'>
                 <label class='label' for='quotes'>Quotes</label>

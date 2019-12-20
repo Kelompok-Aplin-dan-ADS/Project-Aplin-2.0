@@ -2,7 +2,7 @@
     require_once("koneksi.php");
     $id=$_GET["acara"];
     $semuaAcara=mysqli_fetch_assoc(mysqli_query($conn,"SELECT * from acara where id_acara=$id"));
-    
+    include("navbar.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

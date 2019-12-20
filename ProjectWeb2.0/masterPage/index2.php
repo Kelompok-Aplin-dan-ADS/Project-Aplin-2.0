@@ -28,8 +28,10 @@
           $desc_ing = $_POST['textEvent_ing'];
           $waktu = $_POST['waktuAcara'];
           $tempat = $_POST['place'];
+          $tlp = $_POST['tlp'];
           $link = "";
           $tag="";
+          $nip=$_POST["author"];
           if(!empty($_POST["tag"])){
             foreach ($_POST['tag'] as $key => $value) {
               $tag.= $value."|";
@@ -37,7 +39,7 @@
           }
           $kategori = $_POST['kategori'];
           $jurusan = $_POST['jurusan'];
-          $query = "INSERT INTO acara VALUES('','$fileDestination','$judul','$judul_ing','$desc','$desc_ing','$waktu','$tempat','$link','$tag','$kategori','$jurusan')";
+          $query = "INSERT INTO acara VALUES('','$fileDestination','$judul','$judul_ing','$desc','$desc_ing','$waktu','$tempat','$link','$tag','$kategori',$tlp,$nip,'$jurusan')";
           $conn->query($query);
         }
         else{
@@ -53,15 +55,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+  
     <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
   <link rel="stylesheet" href="themeCss.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Titillium+Web:400,700'>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> 0>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<body>
+<body>  
   <style type="text/css">
     .buttonIng{
         display: inline-block;
@@ -106,7 +108,7 @@
         <div class="row">
           <div class="col-lg-12">
             <a href="#" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
-            <form action="#" method="post" class="form" enctype="multipart/form-data">
+            <form action="#" method="post" class="form" id="html5Form"  enctype="multipart/form-data">
               <label class='label required' for='title' style="font-size: 30pt;">Halaman Masukan Acara Baru</label>
               <p class='field required half'>
                 <label class='label required' for='judul'>Judul Acara</label>
@@ -136,6 +138,20 @@
                 <label class='label' for='place'>Tempat Acara</label>
                 <input class='text-input' id='place' name='place' required type='text'>
               </p>
+              <p>
+              <label class='label' for='place'>Author</label>
+                <select name="author" id="author">
+                  <?php
+                    $dosen=mysqli_query($conn,"SELECT * from dosen");
+                    foreach ($dosen as $key => $value) {
+                      echo "<option value='$value[nip]'>$value[nama]</option>";
+                    }
+                  ?>
+                </select>
+              </p>
+
+              <input type="number" id="tlp" name="tlp"/>
+
               <p class='field half'>
                 <label class='label' for='Tag'>Tag</label>
                 <?php
@@ -153,7 +169,8 @@
                   <option value="3">Media Massa</option>
                 </select>
               </p>
-              
+              </div> 
+
               <p class='field'>
                 <label class='label' for='jurusan'>Acara Jurusan</label>
                 <select class='select' name="jurusan" id='jurusan'>
@@ -193,5 +210,6 @@
         $(".buttonIng").click(function(){
           $( ".formIng" ).toggle();
         });
+        $('#html5Form').bootstrapValidator();
     });
 </script>

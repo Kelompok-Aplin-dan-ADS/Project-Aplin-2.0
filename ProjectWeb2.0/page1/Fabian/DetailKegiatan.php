@@ -395,7 +395,7 @@ $id = 5;
     <div class="wrapper">
         <div class="letters">
             <?php
-            $text = $semuaAcara["judul"];
+            $text = $semuaAcara["judul_".$bahasa];
             for ($i = 0; $i < strlen($text); $i++) {
                 echo "<span class='letter'>" . substr($text, $i, 1) . "</span>";
             }
@@ -417,6 +417,9 @@ $id = 5;
         <div><?php echo $semuaAcara["tempat"]." ".$semuaAcara["waktu"]?></div>
 		<div><?php echo $semuaAcara["judul_".$bahasa]?></div>
 		<div><?php echo $semuaAcara["deskripsi_".$bahasa]?></div>
+        <div>Author :<?php 
+            $dosen=mysqli_fetch_assoc(mysqli_query($conn,"SELECT * from dosen where nip=$semuaAcara[author]"));
+        echo $dosen["nama"] ?></div>
 	</div>
     </div>
 
