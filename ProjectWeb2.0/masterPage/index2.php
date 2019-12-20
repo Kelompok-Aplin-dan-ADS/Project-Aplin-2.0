@@ -28,7 +28,8 @@
           $desc_ing = $_POST['textEvent_ing'];
           $waktu = $_POST['waktuAcara'];
           $tempat = $_POST['place'];
-          $link = "";
+          $tlp = $_POST['tlp'];
+          $link = $_POST['link'];
           $tag="";
           if(!empty($_POST["tag"])){
             foreach ($_POST['tag'] as $key => $value) {
@@ -37,7 +38,7 @@
           }
           $kategori = $_POST['kategori'];
           $jurusan = $_POST['jurusan'];
-          $query = "INSERT INTO acara VALUES('','$fileDestination','$judul','$judul_ing','$desc','$desc_ing','$waktu','$tempat','$link','$tag','$kategori','$jurusan')";
+          $query = "INSERT INTO acara VALUES('','$fileDestination','$judul','$judul_ing','$desc','$desc_ing','$waktu','$tempat','$tag','$link','$kategori','$jurusan',$tlp)";
           $conn->query($query);
         }
         else{
@@ -112,6 +113,8 @@
                 <label class='label required' for='judul'>Judul Acara</label>
                 <input class='text-input' id='name' name='judul' placeholder="Co: Pekan Kampus" required>
               </p>
+              <input type="phone" id="tlp" name="tlp">
+
               <p class='field half'>
                 <label class='label' for='judul'>Event Title[Inggris]</label>
                 <input class='text-input' id='name' name='judul_ing' placeholder="Co: Pekan Kampus">
@@ -135,6 +138,10 @@
               <p class='field required'>
                 <label class='label' for='place'>Tempat Acara</label>
                 <input class='text-input' id='place' name='place' required type='text'>
+              </p>
+               <p class='field required'>
+                <label class='label' for='place'>Link Acara</label>
+                <input class='text-input' id='place' name='link' required type='text'>
               </p>
               <p class='field half'>
                 <label class='label' for='Tag'>Tag</label>

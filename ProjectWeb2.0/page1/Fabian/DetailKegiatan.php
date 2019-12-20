@@ -406,20 +406,42 @@ $id = 5;
 					for ($i=0; $i < $index; $i++) { 
 						if ($row['tag_id'] == $splittag[$i]) {                        
 							echo "<button type='button' disabled='false' class='btn btn-primary'>".$row['tag_nama_'.$bahasa]."</button>";
-						}                        
+						}
+                        if($row['link_halaman'] !=""){
+                            ?>
+                                <h1 style="color: white;"><a href="fabian/DetailKegiatan.php?acara="<?=$row['link_halaman']?>></a></h1>
+                                
+                            <?php
+                        }                        
 					}            
 				}
-			?>   
+
+			?>  
+
         </div>
+
     </div>
     <img id="gambar" src=".<?= $semuaAcara["gambar"] ?>" alt="">
     <div id="Kotak">
+        <div><?php echo $semuaAcara['telepon'] ?></div>
         <div><?php echo $semuaAcara["tempat"]." ".$semuaAcara["waktu"]?></div>
 		<div><?php echo $semuaAcara["judul_".$bahasa]?></div>
 		<div><?php echo $semuaAcara["deskripsi_".$bahasa]?></div>
 	</div>
     </div>
+    <?php
+            echo "test";
+                $query = "SELECT * FROM acara WHERE id_acara='$id'";
 
+                $temp = $conn->query($query);
+                $test = mysqli_fetch_assoc($temp);
+                if($test['link_halaman'] !=""){
+                     ?>
+                                <h1 style="color: white;"><a href="<?=$test['jurusan']?>">ini link</a></h1>
+                                
+                            <?php
+                }
+            ?> 
 </body>
 
 </html>
