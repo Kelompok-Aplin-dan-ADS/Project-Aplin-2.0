@@ -35,21 +35,16 @@
 <img src="../assets/logo-stts.png" class="logo-stts-caur">
 <header class="header-section sp-pad">
     
-    <form class="search-top">
-        <button class="se-btn"><i class="fa fa-search"></i></button>
-        <input type="text" placeholder="Search.....">
-    </form>
     <div class="nav-switch">
         <i class="fa fa-bars"></i>
     </div>
     <nav class="main-menu">
         <ul>
             <li><a href="#page1_yong">Home</a></li>
-            <li><a href="about.php">about us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#bagian-dalam">Berita</a></li>
+            <li><a href="#bagian-agenda">Agenda</a></li>
+            <li><a href="#bagian-media">Media Massa</a></li>
+            <li><a href="#kegiatan-jurusan">Kegiatan</a></li>
         </ul>
     </nav>
 </header>

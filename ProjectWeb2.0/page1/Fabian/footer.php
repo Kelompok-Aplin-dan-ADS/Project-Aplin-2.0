@@ -21,45 +21,45 @@
             <h6 class="text-uppercase font-weight-bold" >LAYANAN MAHASISWA</h6>
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 100px;">
             <p>
-            <a href="#!">Sistem Informasi Mahasiswa (SIM)</a>
+            <a href="https://sim.stts.edu">Sistem Informasi Mahasiswa (SIM)</a>
             </p>
             <p>
-            <a href="#!">Perpustakaan Nasional (PNRI)</a>
+            <a href="http://e-resources.perpusnas.go.id/">Perpustakaan Nasional (PNRI)</a>
             </p>
             <p>
-            <a href="#!">Perpustakaan</a>
+            <a href="http://perpustakaan.stts.edu/">Perpustakaan</a>
             </p>
             <h6 class="text-uppercase font-weight-bold">WEBSITE JURUSAN</h6>
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>
-            <a href="#!">D3 Sistem Informasi</a>
+            <a href="http://d3inf.stts.edu">D3 Sistem Informasi</a>
             </p>
             <p>
-            <a href="#!">Strata-1 Informatika</a>
+            <a href="http://informatika.istts.ac.id/">Strata-1 Informatika</a>
             </p>
             <p>
-            <a href="#!">Strata-1 Informatika profesional (kelas malam)</a>
+            <a href="http://s1infpro.stts.edu/">Strata-1 Informatika profesional (kelas malam)</a>
             </p>
             <p>
-            <a href="#!">Strata-1 Sistem Informasi Bisnis Angular</a>
+            <a href="http://sib.stts.edu/">Strata-1 Sistem Informasi Bisnis </a>
             </p>
             <p>
-            <a href="#!">Strata-1 Teknik Industri</a>
+            <a href="http://industri.stts.edu/">Strata-1 Teknik Industri</a>
             </p>
             <p>
-            <a href="#!">Strata-1 Teknik Elektro</a>
+            <a href="http://elektro.stts.edu/">Strata-1 Teknik Elektro</a>
             </p>
             <p>
-            <a href="#!">Strata-1 Desain Komunikasi Visual</a>
+            <a href="http://dkv.stts.edu/">Strata-1 Desain Komunikasi Visual</a>
             </p>
             <p>
-            <a href="#!">Strata-1 Desain Produk</a>
+            <a href="http://despro.stts.edu/">Strata-1 Desain Produk</a>
             </p>
             <p>
-            <a href="#!">S2 Teknologi Informasi</a>
+            <a href="http://www.stts.edu/s2teknologiinformasi.php">S2 Teknologi Informasi</a>
             </p>
             <p>
-            <a href="#!">Bachelor of Information Technology</a>
+            <a href="https://bit.stts.edu">Bachelor of Information Technology</a>
             </p>
         </div>
         
@@ -73,24 +73,24 @@
             <h6 class="text-uppercase font-weight-bold">LEMBAGA</h6>
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>
-            <a href="#!">Lembaga Penelitian & Pengabdian Masyarakat (LPPM)</a>
+            <a href="http://lppm.stts.edu/">Lembaga Penelitian & Pengabdian Masyarakat (LPPM)</a>
             </p>
             <p>
-            <a href="#!">Lembaga Jaminan Mutu (LJM)</a>
+            <a href="http://ljm.stts.edu/">Lembaga Jaminan Mutu (LJM)</a>
             </p>
             <p>
-            <a href="#!">P2KPN</a>
+            <a href="http://p2kpn.stts.edu/">P2KPN</a>
             </p>
             <p>
-            <a href="#!">BEM</a>
+            <a href="http://www.facebook.com/pages/BEM-istts/171709699647033">BEM</a>
             </p>
             <h6 class="text-uppercase font-weight-bold">PUSAT STUDI</h6>
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>
-            <a href="#!">Google Android</a>
+            <a href="http://android.stts.edu/">Google Android</a>
             </p>
             <p>
-            <a href="#!">Linguistik Komputasi</a>
+            <a href="http://indocl.stts.edu/">Linguistik Komputasi</a>
             </p>
         </div>
         
@@ -104,19 +104,19 @@
         <h6 class="text-uppercase font-weight-bold">LAIN-LAIN</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-            <a href="#!">Seminar Nasional Ideatech</a>
+            <a href="http://ideatech.stts.edu/">Seminar Nasional Ideatech</a>
         </p>
         <p>
-            <a href="#!">Abstrak TA/Tesis</a>
+            <a href="http://www.stts.edu/abstrak.php">Abstrak TA/Tesis</a>
         </p>
         <p>
-            <a href="#!">Direktori Dosen</a>
+            <a href="dosen.php">Direktori Dosen</a>
         </p>
         <p>
             <a href="#!">Daftar Buku Terbaru</a>
         </p>
         <p>
-            <a href="#!">E-Class</a>
+            <a href="http://eclass.stts.edu/">E-Class</a>
         </p>
         <img src="../assets/ig.png">
         <img src="../assets/fb.png">
