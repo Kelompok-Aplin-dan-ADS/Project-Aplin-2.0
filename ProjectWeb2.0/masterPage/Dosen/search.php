@@ -11,7 +11,7 @@
                 <img src='$value[gambar]' class='DosenImg'>
                 <div class='DosenText'>
                     <span style='font-size:13px'>$value[nama]</span><br>
-                    <span style='font-size:15px'>$value[jabatan]</span><br>
+                    <span style='font-size:15px'>$value[jabatan_1]</span><br>
                     <span style='font-size:10px'>$value[email]</span>
                 </div>
             </div>

@@ -17,18 +17,19 @@
         $nama = $_POST['nama'];
         $email = $_POST['email'];
         $jabatan = $_POST['jabatan'];
+        $jabatan_ing = $_POST['jabatan_ing'];
         $quotes = $_POST['quotes'];
 
         if($fileName != ""){
           if(in_array($fileActualExt,$arrAllow)){
             move_uploaded_file($fileTmp,$fileDestination);
-            $query = "UPDATE dosen SET nama='$nama',gambar='$fileDatabase',email='$email',jabatan='$jabatan',quotes='$quotes' WHERE nip='$nip'";
+            $query = "UPDATE dosen SET nama='$nama',gambar='$fileDatabase',email='$email',jabatan_1='$jabatan',jabatan_2='$jabatan_ing',quotes='$quotes' WHERE nip='$nip'";
             $conn->query($query);
           }
             
         }
         else{
-            $query = "UPDATE dosen SET nama='$nama',email='$email',jabatan='$jabatan',quotes='$quotes' WHERE nip='$nip'";
+            $query = "UPDATE dosen SET nama='$nama',email='$email',jabatan_1='$jabatan',jabatan_2='$jabatan_ing',quotes='$quotes' WHERE nip='$nip'";
             $conn->query($query);
         }
         header("location: ./../pageDosenUpdate.php");
@@ -87,7 +88,11 @@
               </p>
               <p class='field required'>
                 <label class='label' for='jabatan'>jabatan</label>
-                <input class="text-input" type="text" name="jabatan" id="" value="<?=$dosenNow['jabatan']?>">
+                <input class="text-input" type="text" name="jabatan" id="" value="<?=$dosenNow['jabatan_1']?>">
+              </p>
+              <p class='field required'>
+                <label class='label' for='jabatan'>jabatan [English]</label>
+                <input class="text-input" type="text" name="jabatan_ing" id="" value="<?=$dosenNow['jabatan_2']?>">
               </p>
               <p class="field required">
                   <label class='label' for='Quotes'>Quotes</label>
